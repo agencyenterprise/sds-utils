@@ -14,9 +14,9 @@ After that, run the `serve` command on the root of the project, and navigate to 
 
 Insert the following script tags into your html page:
 
-`<script src="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@v1.0.0/dist/packages/footer/src/lib/footer.js"></script>`
-
-`<script>
+``` html
+<script src="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@v1.0.0/dist/packages/footer/src/lib/footer.js"></script>`
+<script>
   window.onload = () => {
     UniversalFooter({
       expandable: true,
@@ -24,7 +24,8 @@ Insert the following script tags into your html page:
       position: 'absolute',
     }).then(console.log('done'));
   };
-</script>`
+</script>
+```
 
 You can customize the properties to your liking, for more information read the API below.
 

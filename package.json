@@ -1,10 +1,13 @@
 {
   "name": "universal",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "commit": "cz",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release:patch": "nx run workspace:version --releaseAs=patch",
+    "release:minor": "nx run workspace:version --releaseAs=minor",
+    "release:major": "nx run workspace:version --releaseAs=major"
   },
   "private": true,
   "dependencies": {

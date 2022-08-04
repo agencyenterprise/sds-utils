@@ -29,14 +29,14 @@ type SecondaryMessages = Array<string>;
 
 function handleMouseEnter(event: Event) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer?.classList.add("universal-footer-block");
-  upperContainer?.classList.remove("universal-footer-none");
+  upperContainer?.classList.add('universal-footer-block');
+  upperContainer?.classList.remove('universal-footer-none');
 }
 
 function handleMouseLeave(event: Event) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer?.classList.add("universal-footer-none");
-  upperContainer?.classList.remove("universal-footer-block");
+  upperContainer?.classList.add('universal-footer-none');
+  upperContainer?.classList.remove('universal-footer-block');
 }
 
 const _handleMouseEnter = `function handleMouseEnter(el) {
@@ -51,14 +51,14 @@ const _handleMouseLeave = `function handleMouseLeave(el) {
   upperContainer.classList.remove("universal-footer-block");
 }`;
 
-const defaultPrimaryMessage = `A
+const primaryMessage = `A
     <a href="https://ae.studio/same-day-skunkworks" target="_blank">
       SDS
     </a>
     Project • Made with &#10084; by
     <a href="https://ae.studio/" target="_blank"> Agency Enterprise </a>`;
 
-const defaultSecondaryMessages: SecondaryMessages = [
+const secondaryMessages: SecondaryMessages = [
   `Follow us on Twitter <a href="https://twitter.com/DailySkunkwork">@DailySkunkwork</a>`,
   `We’re on a mission to build an agency increasing startup every day.`,
   `<a href="https://ae.studio/same-day-skunkworks">Learn more -></a>`,
@@ -66,7 +66,8 @@ const defaultSecondaryMessages: SecondaryMessages = [
 
 const interFontSrc = 'https://rsms.me/inter/inter.css';
 
-const universalFooterCss = '<style>' +
+const universalFooterCss =
+  '<style>' +
   '.universal-footer-wrapper > p > a,\n' +
   '.universal-footer-wrapper > p > a:-webkit-any-link,\n' +
   '.universal-footer-wrapper > div > p > a,\n' +
@@ -78,22 +79,22 @@ const universalFooterCss = '<style>' +
   '  line-height: 15px;\n' +
   '  color: #6f6f6f !important;\n' +
   '}\n' +
-  '.universal-footer-wrapper.bottom-left {\n' +
+  '.universal-footer-wrapper.bottomleft {\n' +
   '  bottom: 0;\n' +
   '  left: 0;\n' +
   '  margin: 8px;\n' +
   '}\n' +
-  '.universal-footer-wrapper.bottom-right {\n' +
+  '.universal-footer-wrapper.bottomright {\n' +
   '  bottom: 0;\n' +
   '  right: 0;\n' +
   '  margin: 8px;\n' +
   '}\n' +
-  '.universal-footer-wrapper.top-left {\n' +
+  '.universal-footer-wrapper.topleft {\n' +
   '  top: 0;\n' +
   '  left: 0;\n' +
   '  margin: 8px;\n' +
   '}\n' +
-  '.universal-footer-wrapper.top-right {\n' +
+  '.universal-footer-wrapper.topright {\n' +
   '  top: 0;\n' +
   '  right: 0;\n' +
   '  margin: 8px;\n' +
@@ -136,7 +137,7 @@ const universalFooterCss = '<style>' +
   '.universal-footer-block {\n' +
   '  display: block;\n' +
   '}\n' +
-  '</style>'
+  '</style>';
 
 async function UniversalFooter({
   location,
@@ -145,25 +146,6 @@ async function UniversalFooter({
   expandable,
   target,
 }: FooterOptions): Promise<void> {
-  let primaryMessage;
-  let secondaryMessages;
-  try {
-    const primaryMessageFetch = await fetch(
-      'http://localhost:3000/api/message/primary'
-    );
-    const secondaryMessagesFetch = await fetch(
-      'http://localhost:3000/api/message/secondary'
-    );
-    primaryMessage = await primaryMessageFetch.text();
-    secondaryMessages = await secondaryMessagesFetch.json();
-  } catch (e) {
-    console.log(
-      'UniversalFooterException: could not fetch messages, setting messages to default.',
-      e
-    );
-    primaryMessage = defaultPrimaryMessage;
-    secondaryMessages = defaultSecondaryMessages;
-  }
   // Add the universal footer stylesheet
   let cssStylesheet = document.createElement('style');
   cssStylesheet.textContent = universalFooterCss;
@@ -178,13 +160,12 @@ async function UniversalFooter({
   handleMouseLeaveScript.text = _handleMouseLeave;
   document.head.appendChild(handleMouseEnterScript);
   document.head.appendChild(handleMouseLeaveScript);
-  let targetElement;
+  let targetElement: HTMLElement | null = document.body;
   if (target) {
     // If we do have a target, use it to append the footer.
-    targetElement = document.getElementById(<string>target);
-  } else {
-    // In the case the target is blank, we will always append it to the bottom of the body tag.
-    targetElement = document.body;
+    if (document.getElementById(target)) {
+      targetElement = document.getElementById(<string>target);
+    }
   }
   const wrapper = document.createElement('div');
   if (position === PositionOptionsEnum.Relative) {
@@ -221,9 +202,13 @@ async function UniversalFooter({
   wrapperParagraph.classList.add('universal-footer-text');
   wrapperParagraph.innerHTML = primaryMessage;
   wrapper.appendChild(wrapperParagraph);
-  wrapper.addEventListener("mouseenter", handleMouseEnter);
-  wrapper.addEventListener("mouseleave", handleMouseLeave);
-  document.body.appendChild(wrapper);
+  wrapper.addEventListener('mouseenter', handleMouseEnter);
+  wrapper.addEventListener('mouseleave', handleMouseLeave);
+  if (targetElement) {
+    targetElement.appendChild(wrapper);
+  } else {
+    throw new Error('Could not find target element to attach universal footer to.')
+  }
 }
 
 window.UniversalFooter = UniversalFooter;

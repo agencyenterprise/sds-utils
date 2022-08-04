@@ -55,21 +55,19 @@ var LocationOptionsEnum;
     LocationOptionsEnum["BottomCenter"] = "bottomcenter";
 })(LocationOptionsEnum || (LocationOptionsEnum = {}));
 function handleMouseEnter(event) {
-    console.log('firing enter');
     var upperContainer = document.getElementById('upper-container');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add("universal-footer-block");
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove("universal-footer-none");
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-footer-block');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-footer-none');
 }
 function handleMouseLeave(event) {
-    console.log('firing leave');
     var upperContainer = document.getElementById('upper-container');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add("universal-footer-none");
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove("universal-footer-block");
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-footer-none');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-footer-block');
 }
-var _handleMouseEnter = "function handleMouseEnter(el) {\nconsole.log('firing enter')\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-footer-block\");\n  upperContainer.classList.remove(\"universal-footer-none\");\n}";
-var _handleMouseLeave = "function handleMouseLeave(el) {\nconsole.log('firing leave')\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-footer-none\");\n  upperContainer.classList.remove(\"universal-footer-block\");\n}";
-var defaultPrimaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">\n      SDS\n    </a>\n    Project \u2022 Made with &#10084; by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
-var defaultSecondaryMessages = [
+var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-footer-block\");\n  upperContainer.classList.remove(\"universal-footer-none\");\n}";
+var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-footer-none\");\n  upperContainer.classList.remove(\"universal-footer-block\");\n}";
+var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">\n      SDS\n    </a>\n    Project \u2022 Made with &#10084; by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
+var secondaryMessages = [
     "Follow us on Twitter <a href=\"https://twitter.com/DailySkunkwork\">@DailySkunkwork</a>",
     "We\u2019re on a mission to build an agency increasing startup every day.",
     "<a href=\"https://ae.studio/same-day-skunkworks\">Learn more -></a>",
@@ -87,22 +85,22 @@ var universalFooterCss = '<style>' +
     '  line-height: 15px;\n' +
     '  color: #6f6f6f !important;\n' +
     '}\n' +
-    '.universal-footer-wrapper.bottom-left {\n' +
+    '.universal-footer-wrapper.bottomleft {\n' +
     '  bottom: 0;\n' +
     '  left: 0;\n' +
     '  margin: 8px;\n' +
     '}\n' +
-    '.universal-footer-wrapper.bottom-right {\n' +
+    '.universal-footer-wrapper.bottomright {\n' +
     '  bottom: 0;\n' +
     '  right: 0;\n' +
     '  margin: 8px;\n' +
     '}\n' +
-    '.universal-footer-wrapper.top-left {\n' +
+    '.universal-footer-wrapper.topleft {\n' +
     '  top: 0;\n' +
     '  left: 0;\n' +
     '  margin: 8px;\n' +
     '}\n' +
-    '.universal-footer-wrapper.top-right {\n' +
+    '.universal-footer-wrapper.topright {\n' +
     '  top: 0;\n' +
     '  right: 0;\n' +
     '  margin: 8px;\n' +
@@ -149,88 +147,67 @@ var universalFooterCss = '<style>' +
 function UniversalFooter(_a) {
     var location = _a.location, position = _a.position, theme = _a.theme, expandable = _a.expandable, target = _a.target;
     return __awaiter(this, void 0, void 0, function () {
-        var primaryMessage, secondaryMessages, primaryMessageFetch, secondaryMessagesFetch, e_1, cssStylesheet, interFontScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
+        var cssStylesheet, interFontScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
         return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    _b.trys.push([0, 5, , 6]);
-                    return [4 /*yield*/, fetch('http://localhost:3000/api/message/primary')];
-                case 1:
-                    primaryMessageFetch = _b.sent();
-                    return [4 /*yield*/, fetch('http://localhost:3000/api/message/secondary')];
-                case 2:
-                    secondaryMessagesFetch = _b.sent();
-                    return [4 /*yield*/, primaryMessageFetch.text()];
-                case 3:
-                    primaryMessage = _b.sent();
-                    return [4 /*yield*/, secondaryMessagesFetch.json()];
-                case 4:
-                    secondaryMessages = _b.sent();
-                    return [3 /*break*/, 6];
-                case 5:
-                    e_1 = _b.sent();
-                    console.log('UniversalFooterException: could not fetch messages, setting messages to default.', e_1);
-                    primaryMessage = defaultPrimaryMessage;
-                    secondaryMessages = defaultSecondaryMessages;
-                    return [3 /*break*/, 6];
-                case 6:
-                    cssStylesheet = document.createElement('style');
-                    cssStylesheet.textContent = universalFooterCss;
-                    document.head.appendChild(cssStylesheet);
-                    interFontScript = document.createElement('script');
-                    interFontScript.src = '';
-                    handleMouseEnterScript = document.createElement('script');
-                    handleMouseEnterScript.text = _handleMouseEnter;
-                    handleMouseLeaveScript = document.createElement('script');
-                    handleMouseLeaveScript.text = _handleMouseLeave;
-                    document.head.appendChild(handleMouseEnterScript);
-                    document.head.appendChild(handleMouseLeaveScript);
-                    if (target) {
-                        // If we do have a target, use it to append the footer.
-                        targetElement = document.getElementById(target);
-                    }
-                    else {
-                        // In the case the target is blank, we will always append it to the bottom of the body tag.
-                        targetElement = document.body;
-                    }
-                    wrapper = document.createElement('div');
-                    if (position === PositionOptionsEnum.Relative) {
-                        wrapper.classList.add('relative');
-                    }
-                    if (position === PositionOptionsEnum.Absolute &&
-                        location &&
-                        Object.values(LocationOptionsEnum).includes(location)) {
-                        wrapper.classList.add('universal-footer-wrapper', position, location);
-                    }
-                    else {
-                        throw new Error('Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter');
-                    }
-                    // In the case we want to expand the footer, we will configure the plugin to append the secondary messages
-                    if (expandable) {
-                        console.log('SECONDARY MESSAGES: ', secondaryMessages);
-                        upperContainer = document.createElement('div');
-                        upperContainer.classList.add('universal-footer-none');
-                        upperContainer.id = 'upper-container';
-                        for (i = 0; i < secondaryMessages.length; i++) {
-                            upperContainerParagraph = document.createElement('p');
-                            upperContainerParagraph.classList.add('universal-footer-text');
-                            upperContainerParagraph.innerHTML = secondaryMessages[i];
-                            upperContainer.appendChild(upperContainerParagraph);
-                        }
-                        upperContainerDivider = document.createElement('hr');
-                        upperContainerDivider.classList.add('universal-footer-opaque');
-                        upperContainer.appendChild(upperContainerDivider);
-                        wrapper.appendChild(upperContainer);
-                    }
-                    wrapperParagraph = document.createElement('p');
-                    wrapperParagraph.classList.add('universal-footer-text');
-                    wrapperParagraph.innerHTML = primaryMessage;
-                    wrapper.appendChild(wrapperParagraph);
-                    wrapper.addEventListener("mouseenter", handleMouseEnter);
-                    wrapper.addEventListener("mouseleave", handleMouseLeave);
-                    document.body.appendChild(wrapper);
-                    return [2 /*return*/];
+            cssStylesheet = document.createElement('style');
+            cssStylesheet.textContent = universalFooterCss;
+            document.head.appendChild(cssStylesheet);
+            interFontScript = document.createElement('script');
+            interFontScript.src = '';
+            handleMouseEnterScript = document.createElement('script');
+            handleMouseEnterScript.text = _handleMouseEnter;
+            handleMouseLeaveScript = document.createElement('script');
+            handleMouseLeaveScript.text = _handleMouseLeave;
+            document.head.appendChild(handleMouseEnterScript);
+            document.head.appendChild(handleMouseLeaveScript);
+            targetElement = document.body;
+            if (target) {
+                // If we do have a target, use it to append the footer.
+                if (document.getElementById(target)) {
+                    targetElement = document.getElementById(target);
+                }
             }
+            wrapper = document.createElement('div');
+            if (position === PositionOptionsEnum.Relative) {
+                wrapper.classList.add('relative');
+            }
+            if (position === PositionOptionsEnum.Absolute &&
+                location &&
+                Object.values(LocationOptionsEnum).includes(location)) {
+                wrapper.classList.add('universal-footer-wrapper', position, location);
+            }
+            else {
+                throw new Error('Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter');
+            }
+            // In the case we want to expand the footer, we will configure the plugin to append the secondary messages
+            if (expandable) {
+                upperContainer = document.createElement('div');
+                upperContainer.classList.add('universal-footer-none');
+                upperContainer.id = 'upper-container';
+                for (i = 0; i < secondaryMessages.length; i++) {
+                    upperContainerParagraph = document.createElement('p');
+                    upperContainerParagraph.classList.add('universal-footer-text');
+                    upperContainerParagraph.innerHTML = secondaryMessages[i];
+                    upperContainer.appendChild(upperContainerParagraph);
+                }
+                upperContainerDivider = document.createElement('hr');
+                upperContainerDivider.classList.add('universal-footer-opaque');
+                upperContainer.appendChild(upperContainerDivider);
+                wrapper.appendChild(upperContainer);
+            }
+            wrapperParagraph = document.createElement('p');
+            wrapperParagraph.classList.add('universal-footer-text');
+            wrapperParagraph.innerHTML = primaryMessage;
+            wrapper.appendChild(wrapperParagraph);
+            wrapper.addEventListener('mouseenter', handleMouseEnter);
+            wrapper.addEventListener('mouseleave', handleMouseLeave);
+            if (targetElement) {
+                targetElement.appendChild(wrapper);
+            }
+            else {
+                throw new Error('Could not find target element to attach universal footer to.');
+            }
+            return [2 /*return*/];
         });
     });
 }

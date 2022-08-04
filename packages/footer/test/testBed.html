@@ -13,13 +13,19 @@
     ></script>
     <script type="text/javascript" src="footer.js"></script>
     <script>
-      UniversalFooter({
-        expandable: true,
-        location: 'topleft',
-        position: 'absolute',
-      }).then(console.log('done'));
+      window.onload = () => {
+        UniversalFooter({
+          expandable: true,
+          location: 'topright',
+          position: 'absolute',
+        }).then(console.log('done'));
+      };
     </script>
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+  <div id="footer" style="position: absolute; bottom: 0; width: 100%;">
+
+  </div>
+  </body>
 </html>

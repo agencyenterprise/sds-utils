@@ -10,6 +10,57 @@ In order to test the project, install the `serve` package from https://www.npmjs
 
 After that, run the `serve` command on the root of the project, and navigate to http://localhost:3000/packages/footer/test/testBed
 
+## How to use universal footer
+
+Insert the following script tags into your html page:
+
+`<script src="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@v1.0.0/dist/packages/footer/src/lib/footer.js"></script>`
+
+`<script>
+  window.onload = () => {
+    UniversalFooter({
+      expandable: true,
+      location: 'topright',
+      position: 'absolute',
+    }).then(console.log('done'));
+  };
+</script>`
+
+You can customize the properties to your liking, for more information read the API below.
+
+## API
+
+* **expandable:** boolean
+
+Marks the footer to expand when hovering over it.
+
+* **position:** string
+
+Accepts one of the following values: `absolute`, `relative`.
+
+Position indicates the css position attribute the footer should have.
+
+* **location:** string
+
+Accepts one of the following values: `topleft`,`topright`,`topcenter`,`bottomleft`,`bottomright`,`bottomcenter`
+
+Location indicates where the footer should be placed
+
+**NOTE: Location can only be used when in conjunction with position: 'absolute'**
+
+* **target:** string
+
+Accepts any valid string.
+
+Target indicates a html element id, it will be used as the mounting point for the footer.
+
+For example, if you want the footer to be mounted on a div with the id of `footer`:
+
+`<div id="footer"></div>`
+
+The universal footer will instead of mounting the footer at the end of the html body, it will 
+mount on the designated html element with the specified target id.
+
 ## Adding capabilities to your workspace
 
 Nx supports many plugins which add capabilities for developing different types of applications and different tools.

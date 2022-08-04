@@ -4,9 +4,11 @@
 
 This project was generated using [Nx](https://nx.dev).
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+## Running the project:
 
-🔎 **Smart, Fast and Extensible Build System**
+In order to test the project, install the `serve` package from https://www.npmjs.com/package/serve
+
+After that, run the `serve` command on the root of the project, and navigate to http://localhost:3000/packages/footer/test/testBed
 
 ## Adding capabilities to your workspace
 

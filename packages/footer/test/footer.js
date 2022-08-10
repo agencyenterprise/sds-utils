@@ -82,7 +82,7 @@ function UniversalFooter(_a) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.href =
-                'https://cdn.jsdelivr.net/gh/agencyenterprise/universal@v1.0.0/dist/packages/footer/src/lib/footer.css';
+                'https://cdn.jsdelivr.net/gh/agencyenterprise/universal/dist/packages/footer/src/lib/footer.css';
             interFontScript = document.createElement('script');
             interFontScript.src = '';
             handleMouseEnterScript = document.createElement('script');

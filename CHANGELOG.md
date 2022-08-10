@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.4](https://github.com/agencyenterprise/universal/compare/v1.1.3...v1.1.4) (2022-08-10)
+
+
+### Bug Fixes
+
+* **footer:** fix styles not being injected ([6d8beaa](https://github.com/agencyenterprise/universal/commit/6d8beaa07fe8470cac69ff39eb4d74f188c247d9))
+
+
+
 ## [1.1.3](https://github.com/agencyenterprise/universal/compare/v1.1.2...v1.1.3) (2022-08-10)
 
 

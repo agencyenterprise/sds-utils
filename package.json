@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "footer:build": "nx build footer && npm run footer:copy-assets",
+    "footer:copy-assets": "cp packages/footer/src/lib/footer.css dist/packages/footer/src/lib",
     "commit": "cz",
     "prepare": "husky install",
     "release:patch": "nx run workspace:version --releaseAs=patch",

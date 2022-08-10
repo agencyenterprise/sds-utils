@@ -1,6 +1,6 @@
 {
   "name": "universal",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "scripts": {
     "footer:build": "nx build footer && npm run footer:copy-assets",

@@ -4,7 +4,8 @@ declare enum ThemeOptionsEnum {
 }
 declare enum PositionOptionsEnum {
     Relative = "relative",
-    Absolute = "absolute"
+    Absolute = "absolute",
+    Fixed = "fixed"
 }
 declare enum LocationOptionsEnum {
     TopLeft = "topleft",

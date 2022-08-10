@@ -73,85 +73,15 @@ var secondaryMessages = [
     "<a href=\"https://ae.studio/same-day-skunkworks\">Learn more -></a>",
 ];
 var interFontSrc = 'https://rsms.me/inter/inter.css';
-var universalFooterCss = '<style>' +
-    '.universal-footer-wrapper > p > a,\n' +
-    '.universal-footer-wrapper > p > a:-webkit-any-link,\n' +
-    '.universal-footer-wrapper > div > p > a,\n' +
-    '.universal-footer-wrapper > div > p > a:-webkit-any-link{\n' +
-    '  font-family: "Inter", sans-serif;\n' +
-    '  font-style: normal;\n' +
-    '  font-weight: 500;\n' +
-    '  font-size: 12px;\n' +
-    '  line-height: 15px;\n' +
-    '  color: #6f6f6f !important;\n' +
-    '}\n' +
-    '.universal-footer-wrapper.bottomleft {\n' +
-    '  bottom: 0;\n' +
-    '  left: 0;\n' +
-    '  margin: 8px;\n' +
-    '}\n' +
-    '.universal-footer-wrapper.bottomright {\n' +
-    '  bottom: 0;\n' +
-    '  right: 0;\n' +
-    '  margin: 8px;\n' +
-    '}\n' +
-    '.universal-footer-wrapper.topleft {\n' +
-    '  top: 0;\n' +
-    '  left: 0;\n' +
-    '  margin: 8px;\n' +
-    '}\n' +
-    '.universal-footer-wrapper.topright {\n' +
-    '  top: 0;\n' +
-    '  right: 0;\n' +
-    '  margin: 8px;\n' +
-    '}\n' +
-    '.universal-footer-wrapper.relative {\n' +
-    '  position: relative;\n' +
-    '}\n' +
-    '.universal-footer-wrapper.absolute {\n' +
-    '  position: absolute;\n' +
-    '}\n' +
-    '.universal-footer-text {\n' +
-    '  font-family: "Inter", sans-serif;\n' +
-    '  font-style: normal;\n' +
-    '  font-weight: 500;\n' +
-    '  font-size: 12px;\n' +
-    '  line-height: 15px;\n' +
-    '  color: #6f6f6f !important;\n' +
-    '}\n' +
-    '.universal-footer-center {\n' +
-    '  text-align: center;\n' +
-    '}\n' +
-    '.universal-footer-start {\n' +
-    '  text-align: left;\n' +
-    '}\n' +
-    '.universal-footer-wrapper {\n' +
-    '  width: fit-content;\n' +
-    '  height: fit-content;\n' +
-    '  max-width: 272px;\n' +
-    '  padding: 4px 8px;\n' +
-    '  box-shadow: 0px 0px 6.48px -2.16px rgba(0, 0, 0, 0.2),\n' +
-    '  0px 2.16px 2.5px rgba(0, 0, 0, 0.1);\n' +
-    '  border-radius: 3px;\n' +
-    '}\n' +
-    '.universal-footer-opaque {\n' +
-    '  opacity: 0.2;\n' +
-    '}\n' +
-    '.universal-footer-none {\n' +
-    '  display: none;\n' +
-    '}\n' +
-    '.universal-footer-block {\n' +
-    '  display: block;\n' +
-    '}\n' +
-    '</style>';
 function UniversalFooter(_a) {
     var location = _a.location, position = _a.position, theme = _a.theme, expandable = _a.expandable, target = _a.target;
     return __awaiter(this, void 0, void 0, function () {
-        var cssStylesheet, interFontScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
+        var cssLink, interFontScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
         return __generator(this, function (_b) {
-            cssStylesheet = document.createElement('style');
-            cssStylesheet.textContent = universalFooterCss;
-            document.head.appendChild(cssStylesheet);
+            cssLink = document.createElement('link');
+            cssLink.rel = 'stylesheet';
+            cssLink.href =
+                'https://cdn.jsdelivr.net/gh/agencyenterprise/universal@v1.0.0/dist/packages/footer/src/lib/footer.css';
             interFontScript = document.createElement('script');
             interFontScript.src = '';
             handleMouseEnterScript = document.createElement('script');

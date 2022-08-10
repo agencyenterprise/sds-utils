@@ -29,5 +29,4 @@ declare const _handleMouseLeave = "function handleMouseLeave(el) {\n  const uppe
 declare const primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">\n      SDS\n    </a>\n    Project \u2022 Made with &#10084; by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
 declare const secondaryMessages: SecondaryMessages;
 declare const interFontSrc = "https://rsms.me/inter/inter.css";
-declare const universalFooterCss: string;
 declare function UniversalFooter({ location, position, theme, expandable, target, }: FooterOptions): Promise<void>;

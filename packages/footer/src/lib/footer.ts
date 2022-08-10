@@ -69,7 +69,7 @@ const interFontSrc = 'https://rsms.me/inter/inter.css';
 async function UniversalFooter({
   location,
   position,
-  theme,
+  theme=ThemeOptionsEnum.Light,
   expandable,
   target,
 }: FooterOptions): Promise<void> {
@@ -110,6 +110,8 @@ async function UniversalFooter({
       'Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter'
     );
   }
+  if (theme === ThemeOptionsEnum.Light) wrapper.classList.add('light')
+  if (theme === ThemeOptionsEnum.Dark) wrapper.classList.add('dark')
   // In the case we want to expand the footer, we will configure the plugin to append the secondary messages
   if (expandable) {
     const upperContainer = document.createElement('div');

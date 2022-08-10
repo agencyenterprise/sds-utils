@@ -1,3 +1,14 @@
+.light {
+  color: #6f6f6f;
+  background-color: whitesmoke;
+}
+
+.dark {
+  color: whitesmoke;
+  background-color: #191919;
+  border: 1px solid whitesmoke;
+}
+
 .universal-footer-wrapper > p > a,
 .universal-footer-wrapper > p > a:-webkit-any-link,
 .universal-footer-wrapper > div > p > a,
@@ -7,32 +18,47 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
+}
+
+.universal-footer-wrapper.light > p > a,
+.universal-footer-wrapper.light > p > a:-webkit-any-link,
+.universal-footer-wrapper.light > div > p > a,
+.universal-footer-wrapper.light > div > p > a:-webkit-any-link {
   color: #6f6f6f;
 }
-.universal-footer-wrapper.bottom-left {
+
+.universal-footer-wrapper.dark > p > a,
+.universal-footer-wrapper.dark > p > a:-webkit-any-link,
+.universal-footer-wrapper.dark > div > p > a,
+.universal-footer-wrapper.dark > div > p > a:-webkit-any-link {
+  color: whitesmoke;
+}
+
+
+.bottomleft {
   bottom: 0;
   left: 0;
   margin: 8px;
 }
-.universal-footer-wrapper.bottom-right {
+.bottomright {
   bottom: 0;
   right: 0;
   margin: 8px;
 }
-.universal-footer-wrapper.top-left {
+.topleft {
   top: 0;
   left: 0;
   margin: 8px;
 }
-.universal-footer-wrapper.top-right {
+.topright {
   top: 0;
   right: 0;
   margin: 8px;
 }
-.universal-footer-wrapper.relative {
+.relative {
   position: relative;
 }
-.universal-footer-wrapper.absolute {
+.absolute {
   position: absolute;
 }
 .universal-footer-text {
@@ -41,8 +67,16 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
+}
+
+.universal-footer-text.light {
   color: #6f6f6f;
 }
+
+.universal-footer-text.dark {
+  color: #191919;
+}
+
 .universal-footer-center {
   text-align: center;
 }

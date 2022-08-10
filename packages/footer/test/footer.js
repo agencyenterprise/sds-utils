@@ -44,6 +44,7 @@ var PositionOptionsEnum;
 (function (PositionOptionsEnum) {
     PositionOptionsEnum["Relative"] = "relative";
     PositionOptionsEnum["Absolute"] = "absolute";
+    PositionOptionsEnum["Fixed"] = "fixed";
 })(PositionOptionsEnum || (PositionOptionsEnum = {}));
 var LocationOptionsEnum;
 (function (LocationOptionsEnum) {
@@ -101,7 +102,8 @@ function UniversalFooter(_a) {
             if (position === PositionOptionsEnum.Relative) {
                 wrapper.classList.add('relative');
             }
-            if (position === PositionOptionsEnum.Absolute &&
+            if ((position === PositionOptionsEnum.Absolute ||
+                position === PositionOptionsEnum.Fixed) &&
                 location &&
                 Object.values(LocationOptionsEnum).includes(location)) {
                 wrapper.classList.add('universal-footer-wrapper', position, location);

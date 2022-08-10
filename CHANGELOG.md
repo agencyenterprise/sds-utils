@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.3](https://github.com/agencyenterprise/universal/compare/v1.1.2...v1.1.3) (2022-08-10)
+
+
+### Bug Fixes
+
+* **style:** fix css styles ([54e8ff9](https://github.com/agencyenterprise/universal/commit/54e8ff9c5fcb7b6f90afbd0f4351d11db852fac2))
+
+
+
 ## [1.1.2](https://github.com/agencyenterprise/universal/compare/v1.1.1...v1.1.2) (2022-08-10)
 
 

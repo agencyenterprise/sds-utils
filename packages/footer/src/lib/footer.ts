@@ -66,79 +66,6 @@ const secondaryMessages: SecondaryMessages = [
 
 const interFontSrc = 'https://rsms.me/inter/inter.css';
 
-const universalFooterCss =
-  '<style>' +
-  '.universal-footer-wrapper > p > a,\n' +
-  '.universal-footer-wrapper > p > a:-webkit-any-link,\n' +
-  '.universal-footer-wrapper > div > p > a,\n' +
-  '.universal-footer-wrapper > div > p > a:-webkit-any-link{\n' +
-  '  font-family: "Inter", sans-serif;\n' +
-  '  font-style: normal;\n' +
-  '  font-weight: 500;\n' +
-  '  font-size: 12px;\n' +
-  '  line-height: 15px;\n' +
-  '  color: #6f6f6f !important;\n' +
-  '}\n' +
-  '.universal-footer-wrapper.bottomleft {\n' +
-  '  bottom: 0;\n' +
-  '  left: 0;\n' +
-  '  margin: 8px;\n' +
-  '}\n' +
-  '.universal-footer-wrapper.bottomright {\n' +
-  '  bottom: 0;\n' +
-  '  right: 0;\n' +
-  '  margin: 8px;\n' +
-  '}\n' +
-  '.universal-footer-wrapper.topleft {\n' +
-  '  top: 0;\n' +
-  '  left: 0;\n' +
-  '  margin: 8px;\n' +
-  '}\n' +
-  '.universal-footer-wrapper.topright {\n' +
-  '  top: 0;\n' +
-  '  right: 0;\n' +
-  '  margin: 8px;\n' +
-  '}\n' +
-  '.universal-footer-wrapper.relative {\n' +
-  '  position: relative;\n' +
-  '}\n' +
-  '.universal-footer-wrapper.absolute {\n' +
-  '  position: absolute;\n' +
-  '}\n' +
-  '.universal-footer-text {\n' +
-  '  font-family: "Inter", sans-serif;\n' +
-  '  font-style: normal;\n' +
-  '  font-weight: 500;\n' +
-  '  font-size: 12px;\n' +
-  '  line-height: 15px;\n' +
-  '  color: #6f6f6f !important;\n' +
-  '}\n' +
-  '.universal-footer-center {\n' +
-  '  text-align: center;\n' +
-  '}\n' +
-  '.universal-footer-start {\n' +
-  '  text-align: left;\n' +
-  '}\n' +
-  '.universal-footer-wrapper {\n' +
-  '  width: fit-content;\n' +
-  '  height: fit-content;\n' +
-  '  max-width: 272px;\n' +
-  '  padding: 4px 8px;\n' +
-  '  box-shadow: 0px 0px 6.48px -2.16px rgba(0, 0, 0, 0.2),\n' +
-  '  0px 2.16px 2.5px rgba(0, 0, 0, 0.1);\n' +
-  '  border-radius: 3px;\n' +
-  '}\n' +
-  '.universal-footer-opaque {\n' +
-  '  opacity: 0.2;\n' +
-  '}\n' +
-  '.universal-footer-none {\n' +
-  '  display: none;\n' +
-  '}\n' +
-  '.universal-footer-block {\n' +
-  '  display: block;\n' +
-  '}\n' +
-  '</style>';
-
 async function UniversalFooter({
   location,
   position,
@@ -147,9 +74,10 @@ async function UniversalFooter({
   target,
 }: FooterOptions): Promise<void> {
   // Add the universal footer stylesheet
-  let cssStylesheet = document.createElement('style');
-  cssStylesheet.textContent = universalFooterCss;
-  document.head.appendChild(cssStylesheet);
+  let cssLink = document.createElement('link');
+  cssLink.rel = 'stylesheet';
+  cssLink.href =
+    'https://cdn.jsdelivr.net/gh/agencyenterprise/universal@v1.0.0/dist/packages/footer/src/lib/footer.css';
   // Add the inter font
   let interFontScript = document.createElement('script');
   interFontScript.src = '';
@@ -207,7 +135,9 @@ async function UniversalFooter({
   if (targetElement) {
     targetElement.appendChild(wrapper);
   } else {
-    throw new Error('Could not find target element to attach universal footer to.')
+    throw new Error(
+      'Could not find target element to attach universal footer to.'
+    );
   }
 }
 

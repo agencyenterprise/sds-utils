@@ -79,6 +79,7 @@ async function UniversalFooter({
   cssLink.rel = 'stylesheet';
   cssLink.href =
     'https://cdn.jsdelivr.net/gh/agencyenterprise/universal/dist/packages/footer/src/lib/footer.css';
+  document.head.appendChild(cssLink);
   // Add the inter font
   let interFontScript = document.createElement('script');
   interFontScript.src = '';

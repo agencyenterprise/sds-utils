@@ -74,10 +74,10 @@ var secondaryMessages = [
 ];
 var interFontSrc = 'https://rsms.me/inter/inter.css';
 function UniversalFooter(_a) {
-    var location = _a.location, position = _a.position, theme = _a.theme, expandable = _a.expandable, target = _a.target;
+    var location = _a.location, position = _a.position, _b = _a.theme, theme = _b === void 0 ? ThemeOptionsEnum.Light : _b, expandable = _a.expandable, target = _a.target;
     return __awaiter(this, void 0, void 0, function () {
         var cssLink, interFontScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
-        return __generator(this, function (_b) {
+        return __generator(this, function (_c) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.href =
@@ -109,6 +109,10 @@ function UniversalFooter(_a) {
             else {
                 throw new Error('Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter');
             }
+            if (theme === ThemeOptionsEnum.Light)
+                wrapper.classList.add('light');
+            if (theme === ThemeOptionsEnum.Dark)
+                wrapper.classList.add('dark');
             // In the case we want to expand the footer, we will configure the plugin to append the secondary messages
             if (expandable) {
                 upperContainer = document.createElement('div');

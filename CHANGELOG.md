@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.1](https://github.com/agencyenterprise/universal/compare/v1.1.0...v1.1.1) (2022-08-10)
+
+
+### Bug Fixes
+
+* **footer:** remove specific version from link href ([e73e83f](https://github.com/agencyenterprise/universal/commit/e73e83f4a6e80b76227a22cac05f5c1b55bf6138))
+
+
+
 # [1.1.0](https://github.com/agencyenterprise/universal/compare/v1.0.0...v1.1.0) (2022-08-10)
 
 

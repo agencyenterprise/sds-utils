@@ -13,7 +13,7 @@
 .sds-utils-badge-wrapper > p > a:-webkit-any-link,
 .sds-utils-badge-wrapper > div > p > a,
 .sds-utils-badge-wrapper > div > p > a:-webkit-any-link {
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,“Segoe UI”,Roboto,“Helvetica Neue”,Arial,sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -64,9 +64,9 @@
   position: fixed;
 }
 .sds-utils-badge-text {
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,“Segoe UI”,Roboto,“Helvetica Neue”,Arial,sans-serif
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   margin: 8px 0;

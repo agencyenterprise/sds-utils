@@ -8,7 +8,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/badge",
-        "main": "packages/badge/src/lib/footer.ts",
+        "main": "packages/badge/src/lib/badge.ts",
         "tsConfig": "packages/badge/tsconfig.lib.json",
         "assets": ["packages/badge/*.md"]
       }

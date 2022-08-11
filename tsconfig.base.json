@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@universal/footer": ["packages/footer/src/index.ts"]
+      "@universal/badge": ["packages/badge/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

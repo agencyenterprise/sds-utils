@@ -1,10 +1,10 @@
 {
-  "name": "universal",
+  "name": "sds-utils",
   "version": "1.1.4",
   "license": "MIT",
   "scripts": {
-    "footer:build": "nx build footer && npm run footer:copy-assets",
-    "footer:copy-assets": "cp packages/footer/src/lib/footer.css dist/packages/footer/src/lib",
+    "badge:build": "nx build badge && npm run badge:copy-assets",
+    "badge:copy-assets": "cp packages/badge/src/lib/badge.css dist/packages/badge/src/lib",
     "commit": "cz",
     "prepare": "husky install",
     "release:patch": "nx run workspace:version --releaseAs=patch",

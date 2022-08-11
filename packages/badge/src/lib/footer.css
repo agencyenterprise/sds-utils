@@ -12,8 +12,8 @@
 .universal-footer-wrapper > p > a,
 .universal-footer-wrapper > p > a:-webkit-any-link,
 .universal-footer-wrapper > div > p > a,
-.universal-footer-wrapper > div > p > a:-webkit-any-link{
-  font-family: "Inter", sans-serif;
+.universal-footer-wrapper > div > p > a:-webkit-any-link {
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -33,7 +33,6 @@
 .universal-footer-wrapper.dark > div > p > a:-webkit-any-link {
   color: whitesmoke;
 }
-
 
 .bottomleft {
   bottom: 0;
@@ -65,7 +64,7 @@
   position: fixed;
 }
 .universal-footer-text {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -93,7 +92,7 @@
   max-width: 300px;
   padding: 4px 8px;
   box-shadow: 0px 0px 6.48px -2.16px rgba(0, 0, 0, 0.2),
-  0px 2.16px 2.5px rgba(0, 0, 0, 0.1);
+    0px 2.16px 2.5px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 .universal-footer-opaque {

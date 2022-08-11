@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.2.0](https://github.com/agencyenterprise/universal/compare/v1.1.4...v1.2.0) (2022-08-11)
+
+
+### Bug Fixes
+
+* **readme:** change readme package title ([ba698fe](https://github.com/agencyenterprise/universal/commit/ba698fea77b172a8eee3a91e26e5419ccc42a172))
+* **workspace:** change monorepo structure ([9e09623](https://github.com/agencyenterprise/universal/commit/9e09623eb2cb5b97a03bfed5dea3330d115adea0))
+
+
+
 ## [1.1.4](https://github.com/agencyenterprise/universal/compare/v1.1.3...v1.1.4) (2022-08-10)
 
 

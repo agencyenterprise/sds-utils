@@ -57,17 +57,17 @@ var LocationOptionsEnum;
 })(LocationOptionsEnum || (LocationOptionsEnum = {}));
 function handleMouseEnter(event) {
     var upperContainer = document.getElementById('upper-container');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-badge-block');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-badge-none');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('sds-utils-badge-block');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('sds-utils-badge-none');
 }
 function handleMouseLeave(event) {
     var upperContainer = document.getElementById('upper-container');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-badge-none');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-badge-block');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('sds-utils-badge-none');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('sds-utils-badge-block');
 }
-var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-badge-block\");\n  upperContainer.classList.remove(\"universal-badge-none\");\n}";
-var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-badge-none\");\n  upperContainer.classList.remove(\"universal-badge-block\");\n}";
-var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">\n      SDS\n    </a>\n    Project \u2022 Made with &#10084; by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
+var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-block\");\n  upperContainer.classList.remove(\"sds-utils-badge-none\");\n}";
+var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-none\");\n  upperContainer.classList.remove(\"sds-utils-badge-block\");\n}";
+var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">SDS</a>\n    Project \u2022 Made with <img src=\"heart.gif\" alt=\"heart\" width=\"10\" height=\"10\"> by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
 var secondaryMessages = [
     "Follow us on Twitter <a href=\"https://twitter.com/DailySkunkwork\">@DailySkunkwork</a>",
     "We\u2019re on a mission to build an agency increasing startup every day.",
@@ -82,8 +82,7 @@ function SDSUtilsBadge(_a) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.href =
-                'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils/dist/packages/badge/src/lib/badge.css';
-            document.head.appendChild(cssLink);
+                'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.css';
             interFontScript = document.createElement('script');
             interFontScript.src = '';
             handleMouseEnterScript = document.createElement('script');
@@ -107,7 +106,7 @@ function SDSUtilsBadge(_a) {
                 position === PositionOptionsEnum.Fixed) &&
                 location &&
                 Object.values(LocationOptionsEnum).includes(location)) {
-                wrapper.classList.add('universal-badge-wrapper', position, location);
+                wrapper.classList.add('sds-utils-badge-wrapper', position, location);
             }
             else {
                 throw new Error('Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter');
@@ -119,21 +118,21 @@ function SDSUtilsBadge(_a) {
             // In the case we want to expand the badge, we will configure the plugin to append the secondary messages
             if (expandable) {
                 upperContainer = document.createElement('div');
-                upperContainer.classList.add('universal-badge-none');
+                upperContainer.classList.add('sds-utils-badge-none');
                 upperContainer.id = 'upper-container';
                 for (i = 0; i < secondaryMessages.length; i++) {
                     upperContainerParagraph = document.createElement('p');
-                    upperContainerParagraph.classList.add('universal-badge-text');
+                    upperContainerParagraph.classList.add('sds-utils-badge-text');
                     upperContainerParagraph.innerHTML = secondaryMessages[i];
                     upperContainer.appendChild(upperContainerParagraph);
                 }
                 upperContainerDivider = document.createElement('hr');
-                upperContainerDivider.classList.add('universal-badge-opaque');
+                upperContainerDivider.classList.add('sds-utils-badge-opaque');
                 upperContainer.appendChild(upperContainerDivider);
                 wrapper.appendChild(upperContainer);
             }
             wrapperParagraph = document.createElement('p');
-            wrapperParagraph.classList.add('universal-badge-text');
+            wrapperParagraph.classList.add('sds-utils-badge-text');
             wrapperParagraph.innerHTML = primaryMessage;
             wrapper.appendChild(wrapperParagraph);
             wrapper.addEventListener('mouseenter', handleMouseEnter);
@@ -142,7 +141,7 @@ function SDSUtilsBadge(_a) {
                 targetElement.appendChild(wrapper);
             }
             else {
-                throw new Error('Could not find target element to attach universal badge to.');
+                throw new Error('Could not find target element to attach sds-utils badge to.');
             }
             return [2 /*return*/];
         });

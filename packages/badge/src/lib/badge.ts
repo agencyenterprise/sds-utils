@@ -30,33 +30,31 @@ type SecondaryMessages = Array<string>;
 
 function handleMouseEnter(event: Event) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer?.classList.add('universal-badge-block');
-  upperContainer?.classList.remove('universal-badge-none');
+  upperContainer?.classList.add('sds-utils-badge-block');
+  upperContainer?.classList.remove('sds-utils-badge-none');
 }
 
 function handleMouseLeave(event: Event) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer?.classList.add('universal-badge-none');
-  upperContainer?.classList.remove('universal-badge-block');
+  upperContainer?.classList.add('sds-utils-badge-none');
+  upperContainer?.classList.remove('sds-utils-badge-block');
 }
 
 const _handleMouseEnter = `function handleMouseEnter(el) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer.classList.add("universal-badge-block");
-  upperContainer.classList.remove("universal-badge-none");
+  upperContainer.classList.add("sds-utils-badge-block");
+  upperContainer.classList.remove("sds-utils-badge-none");
 }`;
 
 const _handleMouseLeave = `function handleMouseLeave(el) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer.classList.add("universal-badge-none");
-  upperContainer.classList.remove("universal-badge-block");
+  upperContainer.classList.add("sds-utils-badge-none");
+  upperContainer.classList.remove("sds-utils-badge-block");
 }`;
 
 const primaryMessage = `A
-    <a href="https://ae.studio/same-day-skunkworks" target="_blank">
-      SDS
-    </a>
-    Project • Made with &#10084; by
+    <a href="https://ae.studio/same-day-skunkworks" target="_blank">SDS</a>
+    Project • Made with <img src="heart.gif" alt="heart" width="10" height="10"> by
     <a href="https://ae.studio/" target="_blank"> Agency Enterprise </a>`;
 
 const secondaryMessages: SecondaryMessages = [
@@ -74,12 +72,12 @@ async function SDSUtilsBadge({
   expandable,
   target,
 }: BadgeOptions): Promise<void> {
-  // Add the universal badge stylesheet
+  // Add the sds-utils badge stylesheet
   const cssLink = document.createElement('link');
   cssLink.rel = 'stylesheet';
   cssLink.href =
-    'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils/dist/packages/badge/src/lib/badge.css';
-  document.head.appendChild(cssLink);
+    'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.css';
+  // document.head.appendChild(cssLink);
   // Add the inter font
   const interFontScript = document.createElement('script');
   interFontScript.src = '';
@@ -107,7 +105,7 @@ async function SDSUtilsBadge({
     location &&
     Object.values(LocationOptionsEnum).includes(location as LocationOptionsEnum)
   ) {
-    wrapper.classList.add('universal-badge-wrapper', position, location);
+    wrapper.classList.add('sds-utils-badge-wrapper', position, location);
   } else {
     throw new Error(
       'Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter'
@@ -118,21 +116,21 @@ async function SDSUtilsBadge({
   // In the case we want to expand the badge, we will configure the plugin to append the secondary messages
   if (expandable) {
     const upperContainer = document.createElement('div');
-    upperContainer.classList.add('universal-badge-none');
+    upperContainer.classList.add('sds-utils-badge-none');
     upperContainer.id = 'upper-container';
     for (let i = 0; i < secondaryMessages.length; i++) {
       const upperContainerParagraph = document.createElement('p');
-      upperContainerParagraph.classList.add('universal-badge-text');
+      upperContainerParagraph.classList.add('sds-utils-badge-text');
       upperContainerParagraph.innerHTML = secondaryMessages[i];
       upperContainer.appendChild(upperContainerParagraph);
     }
     const upperContainerDivider = document.createElement('hr');
-    upperContainerDivider.classList.add('universal-badge-opaque');
+    upperContainerDivider.classList.add('sds-utils-badge-opaque');
     upperContainer.appendChild(upperContainerDivider);
     wrapper.appendChild(upperContainer);
   }
   const wrapperParagraph = document.createElement('p');
-  wrapperParagraph.classList.add('universal-badge-text');
+  wrapperParagraph.classList.add('sds-utils-badge-text');
   wrapperParagraph.innerHTML = primaryMessage;
   wrapper.appendChild(wrapperParagraph);
   wrapper.addEventListener('mouseenter', handleMouseEnter);
@@ -141,7 +139,7 @@ async function SDSUtilsBadge({
     targetElement.appendChild(wrapper);
   } else {
     throw new Error(
-      'Could not find target element to attach universal badge to.'
+      'Could not find target element to attach sds-utils badge to.'
     );
   }
 }

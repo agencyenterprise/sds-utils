@@ -57,16 +57,16 @@ var LocationOptionsEnum;
 })(LocationOptionsEnum || (LocationOptionsEnum = {}));
 function handleMouseEnter(event) {
     var upperContainer = document.getElementById('upper-container');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-footer-block');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-footer-none');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-badge-block');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-badge-none');
 }
 function handleMouseLeave(event) {
     var upperContainer = document.getElementById('upper-container');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-footer-none');
-    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-footer-block');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.add('universal-badge-none');
+    upperContainer === null || upperContainer === void 0 ? void 0 : upperContainer.classList.remove('universal-badge-block');
 }
-var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-footer-block\");\n  upperContainer.classList.remove(\"universal-footer-none\");\n}";
-var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-footer-none\");\n  upperContainer.classList.remove(\"universal-footer-block\");\n}";
+var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-badge-block\");\n  upperContainer.classList.remove(\"universal-badge-none\");\n}";
+var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"universal-badge-none\");\n  upperContainer.classList.remove(\"universal-badge-block\");\n}";
 var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">\n      SDS\n    </a>\n    Project \u2022 Made with &#10084; by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
 var secondaryMessages = [
     "Follow us on Twitter <a href=\"https://twitter.com/DailySkunkwork\">@DailySkunkwork</a>",
@@ -74,7 +74,7 @@ var secondaryMessages = [
     "<a href=\"https://ae.studio/same-day-skunkworks\">Learn more -></a>",
 ];
 var interFontSrc = 'https://rsms.me/inter/inter.css';
-function UniversalFooter(_a) {
+function SDSUtilsBadge(_a) {
     var location = _a.location, position = _a.position, _b = _a.theme, theme = _b === void 0 ? ThemeOptionsEnum.Light : _b, expandable = _a.expandable, target = _a.target;
     return __awaiter(this, void 0, void 0, function () {
         var cssLink, interFontScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
@@ -82,7 +82,8 @@ function UniversalFooter(_a) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.href =
-                'https://cdn.jsdelivr.net/gh/agencyenterprise/universal/dist/packages/footer/src/lib/footer.css';
+                'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils/dist/packages/badge/src/lib/badge.css';
+            document.head.appendChild(cssLink);
             interFontScript = document.createElement('script');
             interFontScript.src = '';
             handleMouseEnterScript = document.createElement('script');
@@ -93,7 +94,7 @@ function UniversalFooter(_a) {
             document.head.appendChild(handleMouseLeaveScript);
             targetElement = document.body;
             if (target) {
-                // If we do have a target, use it to append the footer.
+                // If we do have a target, use it to append the badge.
                 if (document.getElementById(target)) {
                     targetElement = document.getElementById(target);
                 }
@@ -106,7 +107,7 @@ function UniversalFooter(_a) {
                 position === PositionOptionsEnum.Fixed) &&
                 location &&
                 Object.values(LocationOptionsEnum).includes(location)) {
-                wrapper.classList.add('universal-footer-wrapper', position, location);
+                wrapper.classList.add('universal-badge-wrapper', position, location);
             }
             else {
                 throw new Error('Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter');
@@ -115,24 +116,24 @@ function UniversalFooter(_a) {
                 wrapper.classList.add('light');
             if (theme === ThemeOptionsEnum.Dark)
                 wrapper.classList.add('dark');
-            // In the case we want to expand the footer, we will configure the plugin to append the secondary messages
+            // In the case we want to expand the badge, we will configure the plugin to append the secondary messages
             if (expandable) {
                 upperContainer = document.createElement('div');
-                upperContainer.classList.add('universal-footer-none');
+                upperContainer.classList.add('universal-badge-none');
                 upperContainer.id = 'upper-container';
                 for (i = 0; i < secondaryMessages.length; i++) {
                     upperContainerParagraph = document.createElement('p');
-                    upperContainerParagraph.classList.add('universal-footer-text');
+                    upperContainerParagraph.classList.add('universal-badge-text');
                     upperContainerParagraph.innerHTML = secondaryMessages[i];
                     upperContainer.appendChild(upperContainerParagraph);
                 }
                 upperContainerDivider = document.createElement('hr');
-                upperContainerDivider.classList.add('universal-footer-opaque');
+                upperContainerDivider.classList.add('universal-badge-opaque');
                 upperContainer.appendChild(upperContainerDivider);
                 wrapper.appendChild(upperContainer);
             }
             wrapperParagraph = document.createElement('p');
-            wrapperParagraph.classList.add('universal-footer-text');
+            wrapperParagraph.classList.add('universal-badge-text');
             wrapperParagraph.innerHTML = primaryMessage;
             wrapper.appendChild(wrapperParagraph);
             wrapper.addEventListener('mouseenter', handleMouseEnter);
@@ -141,11 +142,11 @@ function UniversalFooter(_a) {
                 targetElement.appendChild(wrapper);
             }
             else {
-                throw new Error('Could not find target element to attach universal footer to.');
+                throw new Error('Could not find target element to attach universal badge to.');
             }
             return [2 /*return*/];
         });
     });
 }
-window.UniversalFooter = UniversalFooter;
-//# sourceMappingURL=footer.js.map
+window.SDSUtilsBadge = SDSUtilsBadge;
+//# sourceMappingURL=badge.js.map

@@ -12,24 +12,68 @@ After that, run the `serve` command on the root of the project, and navigate to 
 
 ## How to use universal footer
 
-Insert the following script tags into your html page:
+### Pure html website example:
+
+Insert the following stylesheet into your html page:
+
+place the following snippet at the html head
+``` html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.css"></link>`
+```
+
+Insert the following script tags, preferably at the bottom of your page in the sequence shown below:
 
 ``` html
-<script src="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@v1.0.0/dist/packages/footer/src/lib/footer.js"></script>`
+<script href="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.css"></script>`
 <script>
   window.onload = () => {
     UniversalFooter({
-      expandable: true,
-      location: 'topright',
-      position: 'absolute',
+       expandable: true,
+      location: "bottomright",
+      position: "fixed",
     }).then(console.log('done'));
   };
 </script>
 ```
 
+### Next.js example:
+
+At your _app.tsx file, inside the `<Head>` component, place the following snippet:
+
+``` jsx
+<Head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.css"
+  />
+</Head>
+```
+
+After that, on your main section, after the `<Component>` tag, place the following snippet:
+
+``` jsx
+<Script
+  id="footer"
+  src="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.js"
+  onLoad={() => {
+    window.UniversalFooter({
+      expandable: true,
+      location: "bottomright",
+      position: "fixed",
+    });
+  }}
+></Script>
+```
+
 You can customize the properties to your liking, for more information read the API below.
 
 ## API
+
+* **theme:** string
+
+Accepts one of the following values: `light`, `dark`
+
+Theme indicates the color scheme used for the footer.
 
 * **expandable:** boolean
 
@@ -37,7 +81,7 @@ Marks the footer to expand when hovering over it.
 
 * **position:** string
 
-Accepts one of the following values: `absolute`, `relative`.
+Accepts one of the following values: `absolute`, `relative`, `fixed`
 
 Position indicates the css position attribute the footer should have.
 
@@ -132,17 +176,3 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.

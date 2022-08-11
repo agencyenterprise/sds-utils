@@ -18,7 +18,7 @@ enum LocationOptionsEnum {
   BottomCenter = 'bottomcenter',
 }
 
-interface FooterOptions {
+interface BadgeOptions {
   theme: ThemeOptionsEnum;
   position: PositionOptionsEnum;
   location?: LocationOptionsEnum;
@@ -30,26 +30,26 @@ type SecondaryMessages = Array<string>;
 
 function handleMouseEnter(event: Event) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer?.classList.add('universal-footer-block');
-  upperContainer?.classList.remove('universal-footer-none');
+  upperContainer?.classList.add('universal-badge-block');
+  upperContainer?.classList.remove('universal-badge-none');
 }
 
 function handleMouseLeave(event: Event) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer?.classList.add('universal-footer-none');
-  upperContainer?.classList.remove('universal-footer-block');
+  upperContainer?.classList.add('universal-badge-none');
+  upperContainer?.classList.remove('universal-badge-block');
 }
 
 const _handleMouseEnter = `function handleMouseEnter(el) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer.classList.add("universal-footer-block");
-  upperContainer.classList.remove("universal-footer-none");
+  upperContainer.classList.add("universal-badge-block");
+  upperContainer.classList.remove("universal-badge-none");
 }`;
 
 const _handleMouseLeave = `function handleMouseLeave(el) {
   const upperContainer = document.getElementById('upper-container');
-  upperContainer.classList.add("universal-footer-none");
-  upperContainer.classList.remove("universal-footer-block");
+  upperContainer.classList.add("universal-badge-none");
+  upperContainer.classList.remove("universal-badge-block");
 }`;
 
 const primaryMessage = `A
@@ -67,32 +67,32 @@ const secondaryMessages: SecondaryMessages = [
 
 const interFontSrc = 'https://rsms.me/inter/inter.css';
 
-async function UniversalFooter({
+async function SDSUtilsBadge({
   location,
   position,
   theme = ThemeOptionsEnum.Light,
   expandable,
   target,
-}: FooterOptions): Promise<void> {
-  // Add the universal footer stylesheet
-  let cssLink = document.createElement('link');
+}: BadgeOptions): Promise<void> {
+  // Add the universal badge stylesheet
+  const cssLink = document.createElement('link');
   cssLink.rel = 'stylesheet';
   cssLink.href =
-    'https://cdn.jsdelivr.net/gh/agencyenterprise/universal/dist/packages/footer/src/lib/footer.css';
+    'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils/dist/packages/badge/src/lib/badge.css';
   document.head.appendChild(cssLink);
   // Add the inter font
-  let interFontScript = document.createElement('script');
+  const interFontScript = document.createElement('script');
   interFontScript.src = '';
   // Add the mouse event handlers
-  let handleMouseEnterScript = document.createElement('script');
+  const handleMouseEnterScript = document.createElement('script');
   handleMouseEnterScript.text = _handleMouseEnter;
-  let handleMouseLeaveScript = document.createElement('script');
+  const handleMouseLeaveScript = document.createElement('script');
   handleMouseLeaveScript.text = _handleMouseLeave;
   document.head.appendChild(handleMouseEnterScript);
   document.head.appendChild(handleMouseLeaveScript);
   let targetElement: HTMLElement | null = document.body;
   if (target) {
-    // If we do have a target, use it to append the footer.
+    // If we do have a target, use it to append the badge.
     if (document.getElementById(target)) {
       targetElement = document.getElementById(<string>target);
     }
@@ -107,7 +107,7 @@ async function UniversalFooter({
     location &&
     Object.values(LocationOptionsEnum).includes(location as LocationOptionsEnum)
   ) {
-    wrapper.classList.add('universal-footer-wrapper', position, location);
+    wrapper.classList.add('universal-badge-wrapper', position, location);
   } else {
     throw new Error(
       'Location is not one of: topleft, topright, topcenter,  bottomleft, bottomright, bottomcenter'
@@ -115,24 +115,24 @@ async function UniversalFooter({
   }
   if (theme === ThemeOptionsEnum.Light) wrapper.classList.add('light');
   if (theme === ThemeOptionsEnum.Dark) wrapper.classList.add('dark');
-  // In the case we want to expand the footer, we will configure the plugin to append the secondary messages
+  // In the case we want to expand the badge, we will configure the plugin to append the secondary messages
   if (expandable) {
     const upperContainer = document.createElement('div');
-    upperContainer.classList.add('universal-footer-none');
+    upperContainer.classList.add('universal-badge-none');
     upperContainer.id = 'upper-container';
     for (let i = 0; i < secondaryMessages.length; i++) {
       const upperContainerParagraph = document.createElement('p');
-      upperContainerParagraph.classList.add('universal-footer-text');
+      upperContainerParagraph.classList.add('universal-badge-text');
       upperContainerParagraph.innerHTML = secondaryMessages[i];
       upperContainer.appendChild(upperContainerParagraph);
     }
     const upperContainerDivider = document.createElement('hr');
-    upperContainerDivider.classList.add('universal-footer-opaque');
+    upperContainerDivider.classList.add('universal-badge-opaque');
     upperContainer.appendChild(upperContainerDivider);
     wrapper.appendChild(upperContainer);
   }
   const wrapperParagraph = document.createElement('p');
-  wrapperParagraph.classList.add('universal-footer-text');
+  wrapperParagraph.classList.add('universal-badge-text');
   wrapperParagraph.innerHTML = primaryMessage;
   wrapper.appendChild(wrapperParagraph);
   wrapper.addEventListener('mouseenter', handleMouseEnter);
@@ -141,9 +141,9 @@ async function UniversalFooter({
     targetElement.appendChild(wrapper);
   } else {
     throw new Error(
-      'Could not find target element to attach universal footer to.'
+      'Could not find target element to attach universal badge to.'
     );
   }
 }
 
-window.UniversalFooter = UniversalFooter;
+window.SDSUtilsBadge = SDSUtilsBadge;

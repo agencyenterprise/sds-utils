@@ -8,26 +8,27 @@ This project was generated using [Nx](https://nx.dev).
 
 In order to test the project, install the `serve` package from https://www.npmjs.com/package/serve
 
-After that, run the `serve` command on the root of the project, and navigate to http://localhost:3000/packages/footer/test/testBed
+After that, run the `serve` command on the root of the project, and navigate to http://localhost:3000/packages/badge/test/testBed
 
-## How to use universal footer
+## How to use badge
 
 ### Pure html website example:
 
 Insert the following stylesheet into your html page:
+Insert the following stylesheet into your html page:
 
 place the following snippet at the html head
 ``` html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.css"></link>`
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.css"></link>`
 ```
 
 Insert the following script tags, preferably at the bottom of your page in the sequence shown below:
 
 ``` html
-<script href="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.css"></script>`
+<script href="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.js"></script>`
 <script>
   window.onload = () => {
-    UniversalFooter({
+    SDSUtilsBadge({
        expandable: true,
       location: "bottomright",
       position: "fixed",
@@ -44,7 +45,7 @@ At your _app.tsx file, inside the `<Head>` component, place the following snippe
 <Head>
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.css"
+    href="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.css"
   />
 </Head>
 ```
@@ -53,10 +54,10 @@ After that, on your main section, after the `<Component>` tag, place the followi
 
 ``` jsx
 <Script
-  id="footer"
-  src="https://cdn.jsdelivr.net/gh/agencyenterprise/universal@main/dist/packages/footer/src/lib/footer.js"
+  id="badge"
+  src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.js"
   onLoad={() => {
-    window.UniversalFooter({
+    window.SDSUtilsBadge({
       expandable: true,
       location: "bottomright",
       position: "fixed",
@@ -73,23 +74,23 @@ You can customize the properties to your liking, for more information read the A
 
 Accepts one of the following values: `light`, `dark`
 
-Theme indicates the color scheme used for the footer.
+Theme indicates the color scheme used for the badge.
 
 * **expandable:** boolean
 
-Marks the footer to expand when hovering over it.
+Marks the badge to expand when hovering over it.
 
 * **position:** string
 
 Accepts one of the following values: `absolute`, `relative`, `fixed`
 
-Position indicates the css position attribute the footer should have.
+Position indicates the css position attribute the badge should have.
 
 * **location:** string
 
 Accepts one of the following values: `topleft`,`topright`,`topcenter`,`bottomleft`,`bottomright`,`bottomcenter`
 
-Location indicates where the footer should be placed
+Location indicates where the badge should be placed
 
 **NOTE: Location can only be used when in conjunction with position: 'absolute'**
 
@@ -97,13 +98,13 @@ Location indicates where the footer should be placed
 
 Accepts any valid string.
 
-Target indicates a html element id, it will be used as the mounting point for the footer.
+Target indicates a html element id, it will be used as the mounting point for the badge.
 
-For example, if you want the footer to be mounted on a div with the id of `footer`:
+For example, if you want the badge to be mounted on a div with the id of `badge`:
 
-`<div id="footer"></div>`
+`<div id="badge"></div>`
 
-The universal footer will instead of mounting the footer at the end of the html body, it will 
+The universal badge will instead of mounting the badge at the end of the html body, it will 
 mount on the designated html element with the specified target id.
 
 ## Adding capabilities to your workspace

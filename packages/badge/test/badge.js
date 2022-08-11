@@ -67,24 +67,22 @@ function handleMouseLeave(event) {
 }
 var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-block\");\n  upperContainer.classList.remove(\"sds-utils-badge-none\");\n}";
 var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-none\");\n  upperContainer.classList.remove(\"sds-utils-badge-block\");\n}";
-var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">SDS</a>\n    Project \u2022 Made with <img src=\"heart.gif\" alt=\"heart\" width=\"10\" height=\"10\"> by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
+var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">SDS</a>\n    Project \u2022 Made with\n    <img\n      src=\"https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif\"\n      alt=\"heart\"\n      width=\"10\"\n      height=\"10\"> by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
 var secondaryMessages = [
     "Follow us on Twitter <a href=\"https://twitter.com/DailySkunkwork\">@DailySkunkwork</a>",
     "We\u2019re on a mission to build an agency increasing startup every day.",
     "<a href=\"https://ae.studio/same-day-skunkworks\">Learn more -></a>",
 ];
-var interFontSrc = 'https://rsms.me/inter/inter.css';
 function SDSUtilsBadge(_a) {
     var location = _a.location, position = _a.position, _b = _a.theme, theme = _b === void 0 ? ThemeOptionsEnum.Light : _b, expandable = _a.expandable, target = _a.target;
     return __awaiter(this, void 0, void 0, function () {
-        var cssLink, interFontScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
+        var cssLink, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, upperContainerDivider, wrapperParagraph;
         return __generator(this, function (_c) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.href =
                 'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.css';
-            interFontScript = document.createElement('script');
-            interFontScript.src = '';
+            document.head.appendChild(cssLink);
             handleMouseEnterScript = document.createElement('script');
             handleMouseEnterScript.text = _handleMouseEnter;
             handleMouseLeaveScript = document.createElement('script');

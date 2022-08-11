@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.1](https://github.com/agencyenterprise/sds-utils/compare/v1.2.0...v1.2.1) (2022-08-11)
+
+
+### Bug Fixes
+
+* **badge:** change package to new structure ([4ba4e45](https://github.com/agencyenterprise/sds-utils/commit/4ba4e455b73892dc837a83062eb61de9af050187))
+
+
+
 # [1.2.0](https://github.com/agencyenterprise/universal/compare/v1.1.4...v1.2.0) (2022-08-11)
 
 

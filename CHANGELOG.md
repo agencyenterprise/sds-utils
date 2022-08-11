@@ -36,7 +36,7 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Bug Fixes
 
-* **footer:** fix styles not being injected ([6d8beaa](https://github.com/agencyenterprise/universal/commit/6d8beaa07fe8470cac69ff39eb4d74f188c247d9))
+* **badge:** fix styles not being injected ([6d8beaa](https://github.com/agencyenterprise/universal/commit/6d8beaa07fe8470cac69ff39eb4d74f188c247d9))
 
 
 
@@ -54,7 +54,7 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Bug Fixes
 
-* **footer:** fix not appending styles to head ([aaf0993](https://github.com/agencyenterprise/universal/commit/aaf0993e6423b47499fa4ed68eb3a96bf1214b83))
+* **badge:** fix not appending styles to head ([aaf0993](https://github.com/agencyenterprise/universal/commit/aaf0993e6423b47499fa4ed68eb3a96bf1214b83))
 
 
 
@@ -63,7 +63,7 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Bug Fixes
 
-* **footer:** remove specific version from link href ([e73e83f](https://github.com/agencyenterprise/universal/commit/e73e83f4a6e80b76227a22cac05f5c1b55bf6138))
+* **badge:** remove specific version from link href ([e73e83f](https://github.com/agencyenterprise/universal/commit/e73e83f4a6e80b76227a22cac05f5c1b55bf6138))
 
 
 
@@ -78,7 +78,7 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 ### Features
 
 * **assets:** add copy assets step ([14533a4](https://github.com/agencyenterprise/universal/commit/14533a40de8430132ef42bec3d09bb3425810a01))
-* **footer:** add fixed positioning ([f70ed7b](https://github.com/agencyenterprise/universal/commit/f70ed7be8c04b76622ce1f2d6dbefc48212f4287))
+* **badge:** add fixed positioning ([f70ed7b](https://github.com/agencyenterprise/universal/commit/f70ed7be8c04b76622ce1f2d6dbefc48212f4287))
 * **theme:** add dark and light theme ([061945f](https://github.com/agencyenterprise/universal/commit/061945f795f58d96aaa60d84a88ec16cd83d44a9))
 
 
@@ -88,7 +88,7 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Bug Fixes
 
-* **footer:** fix message fetching behavior ([3506e18](https://github.com/agencyenterprise/universal/commit/3506e181d099be44049fe714825ef2b9e49069db))
+* **badge:** fix message fetching behavior ([3506e18](https://github.com/agencyenterprise/universal/commit/3506e181d099be44049fe714825ef2b9e49069db))
 
 
 ### Features

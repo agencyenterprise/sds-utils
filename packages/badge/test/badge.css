@@ -9,10 +9,10 @@
   border: 1px solid whitesmoke;
 }
 
-.universal-footer-wrapper > p > a,
-.universal-footer-wrapper > p > a:-webkit-any-link,
-.universal-footer-wrapper > div > p > a,
-.universal-footer-wrapper > div > p > a:-webkit-any-link {
+.sds-utils-badge-wrapper > p > a,
+.sds-utils-badge-wrapper > p > a:-webkit-any-link,
+.sds-utils-badge-wrapper > div > p > a,
+.sds-utils-badge-wrapper > div > p > a:-webkit-any-link {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -20,17 +20,17 @@
   line-height: 15px;
 }
 
-.universal-footer-wrapper.light > p > a,
-.universal-footer-wrapper.light > p > a:-webkit-any-link,
-.universal-footer-wrapper.light > div > p > a,
-.universal-footer-wrapper.light > div > p > a:-webkit-any-link {
+.sds-utils-badge-wrapper.light > p > a,
+.sds-utils-badge-wrapper.light > p > a:-webkit-any-link,
+.sds-utils-badge-wrapper.light > div > p > a,
+.sds-utils-badge-wrapper.light > div > p > a:-webkit-any-link {
   color: #6f6f6f;
 }
 
-.universal-footer-wrapper.dark > p > a,
-.universal-footer-wrapper.dark > p > a:-webkit-any-link,
-.universal-footer-wrapper.dark > div > p > a,
-.universal-footer-wrapper.dark > div > p > a:-webkit-any-link {
+.sds-utils-badge-wrapper.dark > p > a,
+.sds-utils-badge-wrapper.dark > p > a:-webkit-any-link,
+.sds-utils-badge-wrapper.dark > div > p > a,
+.sds-utils-badge-wrapper.dark > div > p > a:-webkit-any-link {
   color: whitesmoke;
 }
 
@@ -63,7 +63,7 @@
 .fixed {
   position: fixed;
 }
-.universal-footer-text {
+.sds-utils-badge-text {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -72,21 +72,21 @@
   margin: 8px 0;
 }
 
-.universal-footer-text.light {
+.sds-utils-badge-text.light {
   color: #6f6f6f;
 }
 
-.universal-footer-text.dark {
+.sds-utils-badge-text.dark {
   color: #191919;
 }
 
-.universal-footer-center {
+.sds-utils-badge-center {
   text-align: center;
 }
-.universal-footer-start {
+.sds-utils-badge-start {
   text-align: left;
 }
-.universal-footer-wrapper {
+.sds-utils-badge-wrapper {
   width: fit-content;
   height: fit-content;
   max-width: 300px;
@@ -95,12 +95,12 @@
     0px 2.16px 2.5px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
-.universal-footer-opaque {
+.sds-utils-badge-opaque {
   opacity: 0.2;
 }
-.universal-footer-none {
+.sds-utils-badge-none {
   display: none;
 }
-.universal-footer-block {
+.sds-utils-badge-block {
   display: block;
 }

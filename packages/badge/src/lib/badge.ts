@@ -54,7 +54,12 @@ const _handleMouseLeave = `function handleMouseLeave(el) {
 
 const primaryMessage = `A
     <a href="https://ae.studio/same-day-skunkworks" target="_blank">SDS</a>
-    Project • Made with <img src="heart.gif" alt="heart" width="10" height="10"> by
+    Project • Made with
+    <img
+      src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif"
+      alt="heart"
+      width="10"
+      height="10"> by
     <a href="https://ae.studio/" target="_blank"> Agency Enterprise </a>`;
 
 const secondaryMessages: SecondaryMessages = [
@@ -62,8 +67,6 @@ const secondaryMessages: SecondaryMessages = [
   `We’re on a mission to build an agency increasing startup every day.`,
   `<a href="https://ae.studio/same-day-skunkworks">Learn more -></a>`,
 ];
-
-const interFontSrc = 'https://rsms.me/inter/inter.css';
 
 async function SDSUtilsBadge({
   location,
@@ -77,10 +80,7 @@ async function SDSUtilsBadge({
   cssLink.rel = 'stylesheet';
   cssLink.href =
     'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/badge.css';
-  // document.head.appendChild(cssLink);
-  // Add the inter font
-  const interFontScript = document.createElement('script');
-  interFontScript.src = '';
+  document.head.appendChild(cssLink);
   // Add the mouse event handlers
   const handleMouseEnterScript = document.createElement('script');
   handleMouseEnterScript.text = _handleMouseEnter;

@@ -102,3 +102,6 @@
 .sds-utils-badge-block {
   display: block;
 }
+.sds-utils-badge-inline {
+ display: inline;
+}

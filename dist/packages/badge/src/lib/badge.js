@@ -67,7 +67,7 @@ function handleMouseLeave(event) {
 }
 var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-block\");\n  upperContainer.classList.remove(\"sds-utils-badge-none\");\n}";
 var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-none\");\n  upperContainer.classList.remove(\"sds-utils-badge-block\");\n}";
-var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">SDS</a>\n    Project \u2022 Made with\n    <img\n      src=\"https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif\"\n      alt=\"heart\"\n      width=\"10\"\n      height=\"10\"> by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
+var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks\" target=\"_blank\">SDS</a>\n    Project \u2022 Made with\n    <img\n      src=\"https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif\"\n      alt=\"heart\"\n      width=\"10\"\n      height=\"10\"\n      class=\"sds-utils-badge-inline\"> by\n    <a href=\"https://ae.studio/\" target=\"_blank\"> Agency Enterprise </a>";
 var secondaryMessages = [
     "Follow us on Twitter <a href=\"https://twitter.com/DailySkunkwork\">@DailySkunkwork</a>",
     "We\u2019re on a mission to build an agency increasing startup every day.",

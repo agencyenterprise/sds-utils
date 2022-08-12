@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.3](https://github.com/agencyenterprise/sds-utils/compare/v1.2.2...v1.2.3) (2022-08-12)
+
+
+### Bug Fixes
+
+* **badge:** add gif with cdn link ([9021ca2](https://github.com/agencyenterprise/sds-utils/commit/9021ca2fbf975407a39dc585be9ac0ed1c567bbb))
+* **badge:** change font for badge ([4116b37](https://github.com/agencyenterprise/sds-utils/commit/4116b37a4ec14f81cd08ce321874c11e44a5d3a8))
+* **badge:** fix img breaking the line ([7cde3f3](https://github.com/agencyenterprise/sds-utils/commit/7cde3f30144d6593b4049c4a033a65da7c757ac3))
+* **badge:** update style ([74ee783](https://github.com/agencyenterprise/sds-utils/commit/74ee783a377d41ac9c018636ac3a2aa29f4e3793))
+* **build:** update build script ([3faff6c](https://github.com/agencyenterprise/sds-utils/commit/3faff6c4d243872ed9ce0c692e6517a1542613fc))
+* **test:** update test bed ([1eb8dff](https://github.com/agencyenterprise/sds-utils/commit/1eb8dffadcbfb865688783b48c196fc0c3f93d9b))
+* **workspace:** remove references to footer ([06e77e8](https://github.com/agencyenterprise/sds-utils/commit/06e77e8b80e98bc9033070f2b78344cc1b7e7b5e))
+
+
+
 ## [1.2.2](https://github.com/agencyenterprise/sds-utils/compare/v1.2.1...v1.2.2) (2022-08-11)
 
 

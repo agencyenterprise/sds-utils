@@ -59,7 +59,8 @@ const primaryMessage = `A
       src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif"
       alt="heart"
       width="10"
-      height="10"> by
+      height="10"
+      class="sds-utils-badge-inline"> by
     <a href="https://ae.studio/" target="_blank"> Agency Enterprise </a>`;
 
 const secondaryMessages: SecondaryMessages = [

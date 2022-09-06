@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.4](https://github.com/agencyenterprise/sds-utils/compare/v1.2.3...v1.2.4) (2022-09-06)
+
+
+### Features
+
+* fixing design ([624142c](https://github.com/agencyenterprise/sds-utils/commit/624142ca046703265d7ba9e15bbc2f6ba2cbdd7e))
+* removing follow us messag ([54042f3](https://github.com/agencyenterprise/sds-utils/commit/54042f397e961e6e6dd10abe08b1cf6fecb02d36))
+
+
+
 ## [1.2.3](https://github.com/agencyenterprise/sds-utils/compare/v1.2.2...v1.2.3) (2022-08-12)
 
 

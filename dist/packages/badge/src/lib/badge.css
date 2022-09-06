@@ -14,7 +14,7 @@
 .sds-utils-badge-wrapper > div > p > a,
 .sds-utils-badge-wrapper > div > p > a:-webkit-any-link {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 12px;
   line-height: 15px;
 }
@@ -68,7 +68,7 @@
 }
 .sds-utils-badge-text {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   margin: 8px 0;
@@ -115,4 +115,5 @@
 .sds-twitter-link {
   display: flex;
   text-decoration: none !important;
+  width: fit-content;
 }

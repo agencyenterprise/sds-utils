@@ -80,7 +80,7 @@ async function SDSUtilsBadge({
   const cssLink = document.createElement('link');
   cssLink.rel = 'stylesheet';
   cssLink.href =
-    'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@1.2.7/dist/packages/badge/src/lib/badge.css';
+    'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@1.2.8/dist/packages/badge/src/lib/badge.css';
   document.head.appendChild(cssLink);
   // Add the mouse event handlers
   const handleMouseEnterScript = document.createElement('script');

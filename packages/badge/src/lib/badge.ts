@@ -53,7 +53,7 @@ const _handleMouseLeave = `function handleMouseLeave(el) {
 }`;
 
 const primaryMessage = `A
-    <a href="https://ae.studio/same-day-skunkworks" target="_blank">SDS</a>
+    <a href="https://ae.studio/same-day-skunkworks" target="_blank" rel="noreferrer">SDS</a>
     Project • Made with
     <img
       src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif"
@@ -64,9 +64,9 @@ const primaryMessage = `A
     <a href="https://ae.studio/" target="_blank"> Agency Enterprise </a>`;
 
 const secondaryMessages: SecondaryMessages = [
-  `Follow us on Twitter <a href="https://twitter.com/DailySkunkwork">@DailySkunkwork</a>`,
+  `<a href="https://twitter.com/DailySkunkwork" target="_blank" rel="noreferrer">@DailySkunkwork</a>`,
   `We’re on a mission to build an agency increasing startup every day.`,
-  `<a href="https://ae.studio/same-day-skunkworks">Learn more -></a>`,
+  `<a href="https://ae.studio/same-day-skunkworks" target="_blank" rel="noreferrer">Learn more -></a>`,
 ];
 
 async function SDSUtilsBadge({

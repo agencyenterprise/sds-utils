@@ -81,7 +81,7 @@ function SDSUtilsBadge(_a) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.href =
-                'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@1.2.8/dist/packages/badge/src/lib/badge.css';
+                'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@1.2.9/dist/packages/badge/src/lib/badge.css';
             document.head.appendChild(cssLink);
             handleMouseEnterScript = document.createElement('script');
             handleMouseEnterScript.text = _handleMouseEnter;

@@ -67,7 +67,7 @@ function handleMouseLeave(event) {
 }
 var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-block\");\n  upperContainer.classList.remove(\"sds-utils-badge-none\");\n}";
 var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-none\");\n  upperContainer.classList.remove(\"sds-utils-badge-block\");\n}";
-var primaryMessage = "A\n    <a href=\"https://ae.studio/same-day-skunkworks/#sds-badge\" class=\"utils-underline\" target=\"_blank\" rel=\"noreferrer\">SDS</a>\n    Project \u2022 Made with\n    <img\n      src=\"https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif\"\n      alt=\"heart\"\n      width=\"10\"\n      height=\"10\"\n      class=\"sds-utils-badge-inline\"> by <a href=\"https://ae.studio/#sds-badge\" target=\"_blank\" class=\"utils-underline\">Agency Enterprise</a>";
+var primaryMessage = "\n    Made with\n    <img\n      src=\"https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif\"\n      alt=\"heart\"\n      width=\"10\"\n      height=\"10\"\n      class=\"sds-utils-badge-inline\"> by <a href=\"https://ae.studio/#sds-badge\" target=\"_blank\" class=\"utils-underline\">ae.studio</a> and <a href=\"https://ae.studio/same-day-skunkworks/#sds-badge\" class=\"utils-underline\" target=\"_blank\" rel=\"noreferrer\">SDS</a>";
 var secondaryMessages = [
     "We\u2019re on a mission to build something agency increasing (almost) every day.",
     "<a href=\"https://ae.studio/same-day-skunkworks#sds-badge\" target=\"_blank\" rel=\"noreferrer\" class=\"utils-underline\">Learn more \u2192</a>",
@@ -76,19 +76,24 @@ var terciaryMessage = "<a href=\"https://twitter.com/DailySkunkwork#sds-badge\" 
 function SDSUtilsBadge(_a) {
     var location = _a.location, position = _a.position, _b = _a.theme, theme = _b === void 0 ? ThemeOptionsEnum.Light : _b, expandable = _a.expandable, target = _a.target;
     return __awaiter(this, void 0, void 0, function () {
-        var cssLink, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, terciaryMessageContainer, upperContainerDivider, wrapperParagraph;
+        var cssLink, analyticsScript, handleMouseEnterScript, handleMouseLeaveScript, targetElement, wrapper, upperContainer, i, upperContainerParagraph, terciaryMessageContainer, upperContainerDivider, wrapperParagraph;
         return __generator(this, function (_c) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.href =
                 'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@1.2.10/dist/packages/badge/src/lib/badge.css';
             document.head.appendChild(cssLink);
+            analyticsScript = document.createElement('script');
+            analyticsScript.src = 'https://scripts.simpleanalyticscdn.com/latest.js';
+            analyticsScript.async = true;
+            analyticsScript.defer = true;
             handleMouseEnterScript = document.createElement('script');
             handleMouseEnterScript.text = _handleMouseEnter;
             handleMouseLeaveScript = document.createElement('script');
             handleMouseLeaveScript.text = _handleMouseLeave;
             document.head.appendChild(handleMouseEnterScript);
             document.head.appendChild(handleMouseLeaveScript);
+            document.head.appendChild(analyticsScript);
             targetElement = document.body;
             if (target) {
                 // If we do have a target, use it to append the badge.

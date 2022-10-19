@@ -52,15 +52,14 @@ const _handleMouseLeave = `function handleMouseLeave(el) {
   upperContainer.classList.remove("sds-utils-badge-block");
 }`;
 
-const primaryMessage = `A
-    <a href="https://ae.studio/same-day-skunkworks/#sds-badge" class="utils-underline" target="_blank" rel="noreferrer">SDS</a>
-    Project • Made with
+const primaryMessage = `
+    Made with
     <img
       src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif"
       alt="heart"
       width="10"
       height="10"
-      class="sds-utils-badge-inline"> by <a href="https://ae.studio/#sds-badge" target="_blank" class="utils-underline">Agency Enterprise</a>`;
+      class="sds-utils-badge-inline"> by <a href="https://ae.studio/#sds-badge" target="_blank" class="utils-underline">ae.studio</a> and <a href="https://ae.studio/same-day-skunkworks/#sds-badge" class="utils-underline" target="_blank" rel="noreferrer">SDS</a>`;
 
 const secondaryMessages: SecondaryMessages = [
   `We’re on a mission to build something agency increasing (almost) every day.`,
@@ -83,12 +82,17 @@ async function SDSUtilsBadge({
     'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@1.2.10/dist/packages/badge/src/lib/badge.css';
   document.head.appendChild(cssLink);
   // Add the mouse event handlers
+  const analyticsScript = document.createElement('script');
+  analyticsScript.src = 'https://scripts.simpleanalyticscdn.com/latest.js';
+  analyticsScript.async = true;
+  analyticsScript.defer = true;
   const handleMouseEnterScript = document.createElement('script');
   handleMouseEnterScript.text = _handleMouseEnter;
   const handleMouseLeaveScript = document.createElement('script');
   handleMouseLeaveScript.text = _handleMouseLeave;
   document.head.appendChild(handleMouseEnterScript);
   document.head.appendChild(handleMouseLeaveScript);
+  document.head.appendChild(analyticsScript);
   let targetElement: HTMLElement | null = document.body;
   if (target) {
     // If we do have a target, use it to append the badge.

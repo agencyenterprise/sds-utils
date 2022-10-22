@@ -16,7 +16,7 @@ Insert the following stylesheet into your html page:
 
 ```html
 <script
-  href="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.js"
+  src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.js"
 ></script>
 
 <script>

@@ -67,7 +67,7 @@ function handleMouseLeave(event) {
 }
 var _handleMouseEnter = "function handleMouseEnter(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-block\");\n  upperContainer.classList.remove(\"sds-utils-badge-none\");\n}";
 var _handleMouseLeave = "function handleMouseLeave(el) {\n  const upperContainer = document.getElementById('upper-container');\n  upperContainer.classList.add(\"sds-utils-badge-none\");\n  upperContainer.classList.remove(\"sds-utils-badge-block\");\n}";
-var primaryMessage = "\n    Made with\n    <img\n      src=\"https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif\"\n      alt=\"heart\"\n      width=\"10\"\n      height=\"10\"\n      class=\"sds-utils-badge-inline\"> by <a href=\"https://ae.studio/#sds-badge\" target=\"_blank\" class=\"utils-underline\">ae.studio</a> and <a href=\"https://ae.studio/same-day-skunkworks/#sds-badge\" class=\"utils-underline\" target=\"_blank\" rel=\"noreferrer\">SDS</a>";
+var primaryMessage = "\n    Created with \u2665 by <a href=\"https://ae.studio/#sds-badge\" target=\"_blank\" class=\"utils-underline\">ae.studio's</a> <a href=\"https://ae.studio/same-day-skunkworks/#sds-badge\" class=\"utils-underline\" target=\"_blank\" rel=\"noreferrer\">Same Day Skunkworks</a>";
 var secondaryMessages = [
     "We\u2019re on a mission to build something agency increasing (almost) every day.",
     "<a href=\"https://ae.studio/same-day-skunkworks#sds-badge\" target=\"_blank\" rel=\"noreferrer\" class=\"utils-underline\">Learn more \u2192</a>",

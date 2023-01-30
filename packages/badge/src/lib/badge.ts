@@ -53,13 +53,7 @@ const _handleMouseLeave = `function handleMouseLeave(el) {
 }`;
 
 const primaryMessage = `
-    Made with
-    <img
-      src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@main/dist/packages/badge/src/lib/heart.gif"
-      alt="heart"
-      width="10"
-      height="10"
-      class="sds-utils-badge-inline"> by <a href="https://ae.studio/#sds-badge" target="_blank" class="utils-underline">ae.studio</a> and <a href="https://ae.studio/same-day-skunkworks/#sds-badge" class="utils-underline" target="_blank" rel="noreferrer">SDS</a>`;
+    Created with ♥ by <a href="https://ae.studio/#sds-badge" target="_blank" class="utils-underline">ae.studio's</a> <a href="https://ae.studio/same-day-skunkworks/#sds-badge" class="utils-underline" target="_blank" rel="noreferrer">Same Day Skunkworks</a>`;
 
 const secondaryMessages: SecondaryMessages = [
   `We’re on a mission to build something agency increasing (almost) every day.`,

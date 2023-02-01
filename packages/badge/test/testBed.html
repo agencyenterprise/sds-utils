@@ -7,17 +7,23 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="badge.css" />
+    <link
+      rel="stylesheet"
+      href="../../../dist/packages/badge/src/lib/badge.css"
+    />
     <script
       type="text/css"
       src="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
     ></script>
-    <script type="text/javascript" src="badge.js"></script>
+    <script
+      type="text/javascript"
+      src="../../../dist/packages/badge/src/lib/badge.js"
+    ></script>
     <script>
       window.onload = () => {
         SDSUtilsBadge({
           expandable: true,
-          location: 'topright',
+          location: 'bottomright',
           position: 'fixed',
           theme: 'light',
         }).then(console.log('done'));

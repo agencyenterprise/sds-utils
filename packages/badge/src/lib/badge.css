@@ -91,7 +91,8 @@
 .sds-utils-badge-wrapper {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, “Segoe UI”, Roboto,
     “Helvetica Neue”, Arial, sans-serif;
-  width: 310px;
+  width: fit-content;
+  max-width: 350px;
   height: fit-content;
   padding: 4px 8px;
   box-shadow: 0px 0px 6.48px -2.16px rgba(0, 0, 0, 0.2),
@@ -116,4 +117,30 @@
   display: flex;
   text-decoration: none !important;
   width: fit-content;
+}
+
+.sds-utils-badge-wrapper a {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.sds-utils-badge-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.show-on-hover {
+  display: none;
+}
+
+.sds-utils-badge-wrapper:hover .show-on-hover {
+  display: flex;
+}
+
+.badge-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.badge-lighter {
+  opacity: 0.7;
 }

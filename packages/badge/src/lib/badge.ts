@@ -53,7 +53,7 @@ const _handleMouseLeave = `function handleMouseLeave(el) {
 }`;
 
 const primaryMessage = `
-    <div style="display: flex; justify-content: space-between"><a class="show-on-hover badge-lighter" target="_blank" rel="noreferrer" onclick="trackClickSdsBadge('https://twitter.com/DailySkunkwork', 'Twitter')" href="https://twitter.com/DailySkunkwork#sds-badge">Twitter</a><div>Created with ♥ by <a href="https://ae.studio/#sds-badge" onclick="trackClickSdsBadge('https://ae.studio/#sds-badge', 'AE Studio')" target="_blank" class="utils-underline">AE Studio</a></div></div>`;
+    <div style="display: flex; justify-content: space-between"><a class="show-on-hover badge-lighter" target="_blank" rel="noreferrer" onclick="trackClickSdsBadge('https://twitter.com/DailySkunkwork', 'Twitter')" href="https://twitter.com/DailySkunkwork#sds-badge">Twitter</a><div>Created with ♥ by <a href="https://ae.studio/same-day-skunkworks" onclick="trackClickSdsBadge('https://ae.studio/same-day-skunkworks', 'AE Studio')" target="_blank" class="utils-underline">AE Studio</a></div></div>`;
 
 const secondaryMessages: SecondaryMessages = [
   `We build tools that increase human agency. <br />

@@ -72,9 +72,9 @@ function SDSUtilsBadge(_a) {
         return __generator(this, function (_c) {
             cssLink = document.createElement('link');
             cssLink.rel = 'stylesheet';
-            // cssLink.href =
-            //   'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.css';
-            cssLink.href = './badge.css';
+            cssLink.href =
+                'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.css';
+            // cssLink.href = './badge.css';
             document.head.appendChild(cssLink);
             analyticsScript = document.createElement('script');
             analyticsScript.src = 'https://scripts.simpleanalyticscdn.com/latest.js';

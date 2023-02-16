@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "badge:build": "nx build badge && npm run badge:copy-assets",
-    "badge:copy-assets": "cp packages/badge/src/lib/badge.css dist/packages/badge/src/lib && cp packages/badge/src/lib/heart.gif dist/packages/badge/src/lib",
+    "badge:copy-assets": "cp packages/badge/src/lib/badge.css dist/packages/badge/src/lib && cp packages/badge/src/lib/logo.svg dist/packages/badge/src/lib && cp packages/badge/src/lib/waves.gif dist/packages/badge/src/lib",
     "commit": "cz",
     "prepare": "husky install",
     "release:patch": "nx run workspace:version --releaseAs=patch",

@@ -13,6 +13,7 @@
   box-shadow: 0 0 12px rgb(0 0 0 / 15%);
   border-radius: 9px;
   height: 60px;
+  background-color: white;
 }
 
 .sds-utils-footer {

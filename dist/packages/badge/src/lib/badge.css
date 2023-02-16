@@ -12,7 +12,7 @@
   padding: 12px 6px 12px 11px;
   box-shadow: 0 0 12px rgb(0 0 0 / 15%);
   border-radius: 9px;
-  height: 38px;
+  height: 60px;
 }
 
 .sds-utils-footer {
@@ -58,6 +58,7 @@
 
 .sds-utils-footer svg {
   height: 38px;
+  margin-bottom: 10px;
 }
 
 .sds-utils-schedule-call {

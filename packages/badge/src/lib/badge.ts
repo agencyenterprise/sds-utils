@@ -95,7 +95,7 @@ async function SDSUtilsBadge({
 
   footer.innerHTML = `
     <div class="sds-utils-footer-content">
-    <img src="./waves.gif" class="sds-utils-waves" />
+    <img src="https://samedayskunkworks.com/waves.gif" class="sds-utils-waves" />
       <div class="sds-utils-footer-inner-content">
         <a href="https://ae.studio/same-day-skunkworks" onClick="trackClickSdsBadge('https://ae.studio/same-day-skunkworks', 'Footer Logo')" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 579 139" fill="none" xmlns="http://www.w3.org/2000/svg">

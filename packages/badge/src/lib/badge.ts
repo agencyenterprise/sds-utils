@@ -109,9 +109,8 @@ async function SDSUtilsBadge({
 </g>
 </svg>
     </a>
-    <div class="sds-utils-content-text">WE BUILD SOFTWARE, MACHINE LEARNING, AND BCI SOLUTIONS</div>
-    <div class="sds-utils-content-text">HIRE THE WORLD’S MOST EFFECTIVE TEAM.</div>
-    <a class="sds-utils-schedule-call-a" href="https://ae.studio/same-day-skunkworks#calendar" onClick="trackClickSdsBadge('https://ae.studio/same-day-skunkworks#calendar', 'schedule a call')" target="_blank" rel="noreferrer"><div class="sds-utils-schedule-call">schedule a call</div></a>
+    <div class="sds-utils-content-text" style=>We build cutting-edge software and AI to solve the most challenging problems facing our clients and humanity.</div>
+    <a class="sds-utils-schedule-call-a" href="https://ae.studio/same-day-skunkworks#calendar" onClick="trackClickSdsBadge('https://ae.studio/same-day-skunkworks#calendar', 'schedule a call')" target="_blank" rel="noreferrer"><div class="sds-utils-schedule-call">pay us to build things</div></a>
     </div>
     <div class="sds-utils-floating"><a href="https://ae.studio/same-day-skunkworks" onClick="trackClickSdsBadge('https://ae.studio/same-day-skunkworks', 'Discover more projects like this')" target="_blank" rel="noreferrer">Discover more projects like this <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
     viewBox="0 0 31.143 31.143" xml:space="preserve">

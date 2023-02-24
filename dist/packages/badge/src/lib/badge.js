@@ -68,14 +68,8 @@ var trackClickSdsBadge = function (url, btnText) {
 function SDSUtilsBadge(_a) {
     var location = _a.location, position = _a.position, _b = _a.theme, theme = _b === void 0 ? ThemeOptionsEnum.Light : _b, expandable = _a.expandable, target = _a.target;
     return __awaiter(this, void 0, void 0, function () {
-        var cssLink, analyticsScript, targetElement, header, headerDiv, footer;
+        var analyticsScript, targetElement, header, headerDiv, footer;
         return __generator(this, function (_c) {
-            cssLink = document.createElement('link');
-            cssLink.rel = 'stylesheet';
-            cssLink.href =
-                'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.css';
-            // cssLink.href = './badge.css';
-            document.head.appendChild(cssLink);
             analyticsScript = document.createElement('script');
             analyticsScript.src = 'https://scripts.simpleanalyticscdn.com/latest.js';
             analyticsScript.async = true;

@@ -45,13 +45,13 @@ async function SDSUtilsBadge({
   target,
 }: BadgeOptions): Promise<void> {
   // Add the sds-utils badge stylesheet
-  const cssLink = document.createElement('link');
-  cssLink.rel = 'stylesheet';
-  cssLink.href =
-    'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.css';
+  // const cssLink = document.createElement('link');
+  // cssLink.rel = 'stylesheet';
+  // cssLink.href =
+  //   'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.css';
   // cssLink.href = './badge.css';
 
-  document.head.appendChild(cssLink);
+  // document.head.appendChild(cssLink);
   // Add the mouse event handlers
   const analyticsScript = document.createElement('script');
   analyticsScript.src = 'https://scripts.simpleanalyticscdn.com/latest.js';

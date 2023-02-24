@@ -86,9 +86,9 @@ async function SDSUtilsBadge({
   header.classList.add('sds-utils-header');
   header.appendChild(headerDiv);
 
-  if (targetElement) {
-    targetElement.insertBefore(header, targetElement.firstChild);
-  }
+  // if (targetElement) {
+  //   targetElement.insertBefore(header, targetElement.firstChild);
+  // }
 
   const footer = document.createElement('footer');
   footer.classList.add('sds-utils-footer');

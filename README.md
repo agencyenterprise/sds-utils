@@ -22,9 +22,9 @@ Insert the following stylesheet into your html page:
 <script>
   window.onload = () => {
     SDSUtilsBadge({
-      expandable: true,
-      location: 'bottomright',
-      position: 'fixed',
+      showPricing: true,
+      features: ["Feature 1", "Feature 2", "Feature 3"],
+      showHeader: true
     }).then(console.log('done'));
   };
 </script>
@@ -62,9 +62,9 @@ After that, on your main section, after the `<Component>` tag, place the followi
   src="https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.js"
   onLoad={() => {
     window.SDSUtilsBadge({
-      expandable: true,
-      location: 'bottomright',
-      position: 'fixed',
+      showPricing: true,
+      features: ["Feature 1", "Feature 2", "Feature 3"],
+      showHeader: true
     });
   }}
 ></Script>

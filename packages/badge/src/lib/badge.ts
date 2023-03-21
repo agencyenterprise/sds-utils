@@ -22,6 +22,9 @@ interface BadgeOptions {
   theme: ThemeOptionsEnum;
   position: PositionOptionsEnum;
   location?: LocationOptionsEnum;
+  showPricing?: boolean;
+  features?: [];
+  showHeader?: boolean;
   expandable?: boolean;
   target?: string;
 }
@@ -42,17 +45,11 @@ async function SDSUtilsBadge({
   position,
   theme = ThemeOptionsEnum.Light,
   expandable,
+  showPricing,
+  features,
+  showHeader,
   target,
 }: BadgeOptions): Promise<void> {
-  // Add the sds-utils badge stylesheet
-  // const cssLink = document.createElement('link');
-  // cssLink.rel = 'stylesheet';
-  // cssLink.href =
-  //   'https://cdn.jsdelivr.net/gh/agencyenterprise/sds-utils@latest/dist/packages/badge/src/lib/badge.css';
-  // cssLink.href = './badge.css';
-
-  // document.head.appendChild(cssLink);
-  // Add the mouse event handlers
   const analyticsScript = document.createElement('script');
   analyticsScript.src = 'https://scripts.simpleanalyticscdn.com/latest.js';
   analyticsScript.async = true;
@@ -86,12 +83,63 @@ async function SDSUtilsBadge({
   header.classList.add('sds-utils-header');
   header.appendChild(headerDiv);
 
-  // if (targetElement) {
-  //   targetElement.insertBefore(header, targetElement.firstChild);
-  // }
+  if (showHeader == true) {
+    if (targetElement) {
+      targetElement.insertBefore(header, targetElement.firstChild);
+    }
+  }
 
   const footer = document.createElement('footer');
   footer.classList.add('sds-utils-footer');
+
+  if (showPricing == true) {
+    const featuresDiv = document.createElement('div');
+
+    if (features) {
+      if (features?.length > 0) {
+        let featuresString = '';
+
+        for (let i = 0; i < features.length; i++) {
+          featuresString += `<div class="sds-utils-card__features--container">
+            <p>${features[i]}</p>
+          </div>`;
+        }
+
+        const featuresDivHtml = `
+          <div class="sds-utils-main">
+            <a onClick="trackClickSdsBadge('https://ae.studio/same-day-skunkworks', 'SDS Utils - Pricing - Basic')" href="https://ae.studio/same-day-skunkworks" target="_blank" rel="noreferrer" class="sds-utils-main sds-utils-card">
+              <div class="sds-utils-card__hero">
+                <h1>Basic</h1>
+                <p>It's free. And it will always be.</p>
+                <p class="price">$0.00 <span>/month</span></p>
+              </div>
+              <div class="sds-utils-card__features">
+                ${featuresString}
+              </div>
+              <div class="sds-utils-card_btn">Choose Basic</div>
+          </a>
+
+          <a onClick="trackClickSdsBadge('https://ae.studio/same-day-skunkworks', 'SDS Utils - Pricing - Pro')" href="https://ae.studio/same-day-skunkworks" target="_blank" rel="noreferrer" class="sds-utils-card sds-utils-card">
+            <div class="sds-utils-card__hero">
+              <h1>Pro</h1>
+              <p>It's free. And it will always be.</p>
+              <p class="price">$0.00 <span>/month</span></p>
+            </div>
+            <div class="sds-utils-card__features">
+              ${featuresString}
+            </div>
+            <div class="sds-utils-card_btn">Choose Pro</div>
+          </a>
+        </div>
+        `;
+
+        featuresDiv.innerHTML = featuresDivHtml;
+        targetElement?.appendChild(featuresDiv);
+      }
+    }
+
+    console.log('show pricing');
+  }
 
   footer.innerHTML = `
     <div class="sds-utils-footer-content">

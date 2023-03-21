@@ -19,8 +19,11 @@ interface BadgeOptions {
     theme: ThemeOptionsEnum;
     position: PositionOptionsEnum;
     location?: LocationOptionsEnum;
+    showPricing?: boolean;
+    features?: [];
+    showHeader?: boolean;
     expandable?: boolean;
     target?: string;
 }
 declare const trackClickSdsBadge: (url: string, btnText: string) => void;
-declare function SDSUtilsBadge({ location, position, theme, expandable, target, }: BadgeOptions): Promise<void>;
+declare function SDSUtilsBadge({ location, position, theme, expandable, showPricing, features, showHeader, target, }: BadgeOptions): Promise<void>;

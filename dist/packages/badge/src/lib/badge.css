@@ -113,3 +113,130 @@
     display: none;
   }
 }
+
+.sds-utils-main {
+  display: flex;
+  min-height: 630px;
+  color: #747578;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.sds-utils-card {
+  display: block;
+  width: 350px;
+  height: auto;
+  background: #212529;
+  border-radius: 9px;
+  padding: 30px;
+  text-decoration: none;
+}
+
+.sds-utils-card__hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sds-utils-card__hero h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  color: #f1f1f1;
+  margin-bottom: 15px;
+}
+
+.sds-utils-main .price-cross {
+  margin-top: 30px;
+  font-size: 22px;
+  color: #a1a6ab;
+  text-decoration: line-through;
+}
+
+.sds-utils-main .price {
+  font-size: 43px;
+  color: white;
+}
+
+.sds-utils-main span {
+  font-size: 13px;
+  line-height: 27px;
+}
+
+.sds-utils-card__features {
+  padding: 20px 0;
+}
+
+.sds-utils-card__features--container {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.sds-utils-card__features--container img {
+  width: 21px;
+  margin-right: 10px;
+}
+
+.sds-utils-main .sds-utils-card_btn {
+  display: block;
+  color: white;
+  width: 200px;
+  background: #3e8cff;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 9px;
+  width: 100%;
+}
+
+.sds-utils-card--pro {
+  border-radius: 0 0 9px 9px;
+  position: relative;
+}
+
+.sds-utils-card-extension-recommended {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  height: 30px;
+  text-align: center;
+  border-radius: 9px 9px 0 0;
+  background: #3e8cff;
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+  line-height: 30px;
+  font-size: 13px;
+}
+
+/* Animation scale */
+.sds-utils-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sds-utils-card:hover {
+  transform: translateY(-19px);
+}
+
+@media screen and (max-width: 699px) {
+  .sds-utils-main {
+    justify-content: center;
+    padding: 50px;
+    height: auto;
+  }
+  .sds-utils-card {
+    margin-bottom: 50px;
+  }
+  .sds-utils-card:hover {
+    transform: none;
+  }
+}

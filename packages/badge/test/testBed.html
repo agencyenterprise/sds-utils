@@ -22,10 +22,13 @@
     <script>
       window.onload = () => {
         SDSUtilsBadge({
-          expandable: true,
-          location: 'bottomright',
-          position: 'fixed',
-          theme: 'light',
+          showPricing: true,
+          features: [
+            'its nice',
+            'i like it',
+            'perfect for you',
+            'good good good',
+          ],
         }).then(console.log('done'));
       };
     </script>
